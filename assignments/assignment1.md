@@ -32,16 +32,10 @@
     - fretonomy, biggest hurdle in getting good (intermediate)
 
     - actually learn to become comfortable with the notes, and how they relate to each other too app
-5. Social Events
-    - planning with others
-    - finding an event
-    - media reccommendation from friends
-        - hard to remmeber
-        - add your own, share it to friends and add to their lists
-6. Internships
+5. Internships
     - Job search/applier
     - Internship + mentorship + event planner – aggregate deadlines, networking events, and prep materials; visualize a “career roadmap” for students.
-7. Travelling (with friends/family too)
+6. Travelling (with friends/family too)
     - Trip planner
         - feature to add people, everyone can put down things that they want, you can vote on them as well, and see different configurations and cost and stuff
         - each person can have their own plans as well? (like flights and stuff??)
@@ -55,20 +49,21 @@
         - maybe swiping left and right for places you wanna visit?
     - a list to keep track of what to bring (has defaults too ie hawaii, college dorm, etc)
         - when you click on an item, a bunch of items that you could buy shows up
-8. Clothes/Style
+7. Clothes/Style
     - Tailor
         - mom tries using tape measure, is it right place, etc...
         - (probably helpful for suits and such)
         - also for finding body type and style! + try it on?
     - scan barcode, tells you online price, in store price, similar item prices elsewhere too (via reverse image search)
-9. Friendships
+8. Friendships
     - sharing schedules
     - sharing class schedules
     - planning classes together
-10. 3d printing
+9. 3d printing
     - convert smtn you see in person into a 3d model
     - maybe use AI to modify that 3d model
-12. Safety
+    - learning about 3d printers (no good guide apps yet, a bit of a learning curve)
+10. Safety
     - life 360, dashboard cams
     - Dashboard camera... use ur phone instead (also helps with charging and not distracted driving)
         - safety in general, with mph and stuff too
