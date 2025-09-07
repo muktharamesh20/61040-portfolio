@@ -3,30 +3,77 @@
 ## Domains
 1. School
     - disorganized, everything everywhere (one place for everything)
-    - shared notes
-2. Transportation
+    - shared notes (writer/annotator role too?)
+    - notes made for you with voice over that you can accept or reject?
+        - can also add more explanation if you don't get it
+    - skill swapping
+    - pset partners
+        - have a list of work you want to collaborate on
+        - have a list of topics you wanna go over/talk to with someone
+        - find matches, schedule it together
+
+        - add your friends and school for preferences, but is also global
+    - above for college students every day life - aggregate deadlines, personal calendar, internships, event planner
+2. Sports
+    - airbnb for practice areas (ie tennis, soccer, etc)
 3. Time mangagement
+    - Doomscrolling
+    - lock out
+    - app that tells you exactly how much time you're wasting, how many things you could have done if you just didn't do what you did
+        - kind of a more negative type app tracking your stuff, but not punishing
+        - visualize on a calendar
+        - block certain apps at certain times (more flexibility... sometimes you do need to relax)
+        - issue is that you have to commit to not using screens, and if you do, you don't need the app and if you don't then the app won't stop you, you'll just stop it
+        - visualizing opportunity cost
+        - maybe even commit to a month of getting messages?  so you have to get off your screentime and/or getting messages about all that
+        - different levels of how hard it is to get into an app...
 4. Guitar/Musical Instruments
-5. Movies
-6. Social Events
+    - hum notes, and then it makes it into drums, piano, etc.
+    - fretonomy, biggest hurdle in getting good (intermediate)
+
+    - actually learn to become comfortable with the notes, and how they relate to each other too app
+5. Social Events
     - planning with others
-7. Internships
+    - finding an event
+    - media reccommendation from friends
+        - hard to remmeber
+        - add your own, share it to friends and add to their lists
+6. Internships
     - Job search/applier
-8. 
-9. 
-10. 
+    - Internship + mentorship + event planner – aggregate deadlines, networking events, and prep materials; visualize a “career roadmap” for students.
+7. Travelling (with friends/family too)
+    - Trip planner
+        - feature to add people, everyone can put down things that they want, you can vote on them as well, and see different configurations and cost and stuff
+        - each person can have their own plans as well? (like flights and stuff??)
+            - solves problem that everything isn't already planned out by the time you get to the planner... you can dynamically choose and re-add and remove from the "final plan"
+        - add a happiness score for each person too? so yk if everyone is happy with the schedule?
+        - algorithm to incrase happiness and stuff too?
+    - Travel planner, but include all costs including itenerary, ubers to and from itenerary, rental cars, planes, hotels, airbnbs, etc.
+        - can choose specific times for specific events
+        - or simply mention which locations to visit, how long you want to spend there
+        - reccommends places as well
+        - maybe swiping left and right for places you wanna visit?
+    - a list to keep track of what to bring (has defaults too ie hawaii, college dorm, etc)
+        - when you click on an item, a bunch of items that you could buy shows up
+8. Clothes/Style
+    - Tailor
+        - mom tries using tape measure, is it right place, etc...
+        - (probably helpful for suits and such)
+        - also for finding body type and style! + try it on?
+    - scan barcode, tells you online price, in store price, similar item prices elsewhere too (via reverse image search)
+9. Friendships
+    - sharing schedules
+    - sharing class schedules
+    - planning classes together
+10. 3d printing
+    - convert smtn you see in person into a 3d model
+    - maybe use AI to modify that 3d model
+12. Safety
+    - life 360, dashboard cams
+    - Dashboard camera... use ur phone instead (also helps with charging and not distracted driving)
+        - safety in general, with mph and stuff too
+
+    
 
 
-Domains. From your social connections, activities, life experience, hobbies, interests, etc, identify ten domains (general problem areas) that you are interested in and might make promising subjects for a project. Then select the three that seem most promising and explain them.
-A list of ten domains (with a short phrase for each)
-For three of these, additionally, a few sentences explaining your interest in it
-Problems. For each of your three selected domains, identify three problems that might be worth solving. Now, from all these problems (nine in total), select three that seem to you most worth pursuing, and explain them. Justify your decision to include these and to exclude each of the others. Suitable justifications might be: that you believe the problem is more or less serious or widespread; that you have a particular insight about it; that a solution would likely be very hard, or might require significant non-software elements; that it would make a more enjoyable project for some reason; etc.
-A list of three problems in each of three domains with a short phrase for each
-For three selected problems, a title and a few sentences explaining it, and why you included it
-For the unselected problems, a sentence or two explaining why you excluded them
-Stakeholders. For each of your three selected problems, identify at least three stakeholders (both direct users and non-users) who might need to be considered in judging the effectiveness of solutions to these problems, and comment on the impact the problem might have on them.
-Three stakeholders for three problems, each with a name and a phrase defining them; and then for each problem, a few sentences saying which stakeholders might be affected and how.
-Evidence. For each of your three selected problems, compile some evidence for or against it (how much it matters, how many users might be affected, etc), and a list of comparables (related or prior attempts at solving the problem) and their limitations. Each piece of evidence or comparable should have an associated citation link. Suitable sources include Wikipedia articles, newspaper articles, blog posts, Q&A forums. Quantitative measures are especially helpful but are not required. LLM output per se does not constitute evidence.
-For each of three problems, about 10 links to evidence or comparables with a sentence or two explaining each
-Features. For each of your three selected problems, suggest three features of a possible solution, explaining what it does, and why it would contribute to addressing the problem (referring when appropriate to the stakeholders you defined). These features do not have to be consistent with each other (in fitting together in an application); they are just starting points for solutions.
-Nine features, each with a title and a few sentences explaining it
+
