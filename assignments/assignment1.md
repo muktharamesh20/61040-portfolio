@@ -1,7 +1,7 @@
 # Assignment 1
 
 ## Domains
-1. School
+1. School: Taking notes, studying together, keeping together deadlines
     - disorganized, everything everywhere (one place for everything)
     - shared notes (writer/annotator role too?)
     - notes made for you with voice over that you can accept or reject?
@@ -14,19 +14,9 @@
 
         - add your friends and school for preferences, but is also global
     - above for college students every day life - aggregate deadlines, personal calendar, internships, event planner
-2. Sports
+2. Sports: Finding local areas to play, practicing with friends, finding right equipment
     - airbnb for practice areas (ie tennis, soccer, etc)
 3. Time mangagement
-    - Doomscrolling
-    - lock out
-    - app that tells you exactly how much time you're wasting, how many things you could have done if you just didn't do what you did
-        - kind of a more negative type app tracking your stuff, but not punishing
-        - visualize on a calendar
-        - block certain apps at certain times (more flexibility... sometimes you do need to relax)
-        - issue is that you have to commit to not using screens, and if you do, you don't need the app and if you don't then the app won't stop you, you'll just stop it
-        - visualizing opportunity cost
-        - maybe even commit to a month of getting messages?  so you have to get off your screentime and/or getting messages about all that
-        - different levels of how hard it is to get into an app...
 4. Guitar/Musical Instruments
     - hum notes, and then it makes it into drums, piano, etc.
     - fretonomy, biggest hurdle in getting good (intermediate)
@@ -35,7 +25,7 @@
 5. Internships
     - Job search/applier
     - Internship + mentorship + event planner – aggregate deadlines, networking events, and prep materials; visualize a “career roadmap” for students.
-6. Travelling (with friends/family too)
+6. Travelling (with friends/family too) <- Yes
     - Trip planner
         - feature to add people, everyone can put down things that they want, you can vote on them as well, and see different configurations and cost and stuff
         - each person can have their own plans as well? (like flights and stuff??)
@@ -49,7 +39,7 @@
         - maybe swiping left and right for places you wanna visit?
     - a list to keep track of what to bring (has defaults too ie hawaii, college dorm, etc)
         - when you click on an item, a bunch of items that you could buy shows up
-7. Clothes/Style
+7. Clothes/Style <- Yes
     - Tailor
         - mom tries using tape measure, is it right place, etc...
         - (probably helpful for suits and such)
