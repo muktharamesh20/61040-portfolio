@@ -4,7 +4,7 @@
 ### Brainstorming Domains
 1. School: Studying together, keeping together deadlines, planning classes together
 2. Sports: Finding local areas to play, Practicing with friends, finding right equipment
-3. Time mangagement: Dealing with school, clubs, social events, internships, and sleep.
+3. Time management: Dealing with school, clubs, social events, internships, and sleep.
 4. Music: learning, playing, and making music
 5. Internships: Keeping track of deadlines, what you've applied to, prepearing for OA's/Interviews
 6. Travelling: Finding places to go, planning with other people
@@ -25,7 +25,7 @@
     - Finding a study buddy
 2. Travelling
     - Group planning for Travelling: Making sure everyone has a say in activities at destination
-    - Planning itenerary at a location (not just the plane/hotel): Making sure it's feasible with time/budget constraints
+    - Planning itinerary at a location (not just the plane/hotel): Making sure it's feasible with time/budget constraints
     - Making sure you don't forget anything
 3. Clothes/Style
     - Using/Learning Basics of Clothing - Style is subjective, but there are some things that help your clothes look better like color and if it's the right fit. 
@@ -45,7 +45,7 @@
     - This is an issue for both travelling with friends and with family.  Sometimes making specific plans at the place gets delayed/forgotten until the last possible moment, or perhaps more vocal people get their plans in while other people don't.  Sometimes the organizer gets the most say in events, which the rest of the people don't like. Both of these problems have happened with both family and friend trips for me, and it causes unhappiness and sometimes wasted money.  I think that this is a good problem to solve because it makes sure everyone is happy with the trip, or at least has a say.  It might save time as well, and you might be able to book earlier if people don't keep forgetting to figure out what they're doing.  I think that this is a widespread problem and it can be serious because you're spending a lot of money and want to make sure everyone is happy.
     - Stakeholders:
         - Trip Organizer:  Usually there is one person taking the lead in organizing the trip.  They might have to repetitively send out texts to get events to work together.  They could feel stressed, overwhelmed, or frusterated if the group preferences are unclear or conflicting
-        - Travel companionas (the people who are part of the trip, but aren't the "main" person orgainzing it): Might feel ignored, unhappy, or stressed if their ideas aren't being reflected in the itenerary
+        - Travel companionas (the people who are part of the trip, but aren't the "main" person orgainzing it): Might feel ignored, unhappy, or stressed if their ideas aren't being reflected in the itinerary.  Might feel even more stressed or annoyed if they are paying money for attractions that they don't want to go to.
         - Attractions:  Delayed or last minute bookings can cause inefficiencies or lost revenue.  Additionally, if people decide not to go to a certain event due to the best attractions not being chosen, then some attractions might also lose revenue that way.
 
 3. *Right Price For clothing*
@@ -60,14 +60,14 @@
     - I think if this problem mattered to a person, they might have already figured out a solution via planners, iCal links, and more.  I don't think that a solution that I could come up with (ie integrating all the calendars together) would be that much better that just using iCal links.  If people don't use these other solutions, they just might not find this problem as that serious too.
 2. *Finding time to study with someone*
     - A lot of people just text in the group chat, or have a space to do homework already.  I don't think that this problem is very widespread.  Additionally, this gains value with more users so it might not be as valuable at the beginning.  I'm also solving a varient of this problem as a side-project, so it wouldn't be as enjoyable for me to do as a project.
-3. *Planning itenerary at location: Making sure it's feasible with time/budget constraints*
+3. *Planning itinerary at location: Making sure it's feasible with time/budget constraints*
     - I don't think this problem is as serious or as widespread.  I think that if you're going on vacation or travelling and already have a list of places to go, it's pretty easy to gauge whether an attraction there is too expensive for the budget. It's also not as useful as checking flight prices because you can save money with flight prices, not as much with a specific attraction (ie a museum) that you want to visit.  The problem isn't that serious, and an app might add more friction rather than reduce it.
 4. *Travel packing lists*
     - I don't think that this is as serious of a problem.  Lot's of people just use sheets or docs, and there's easy sharing and checking off. 
 5. *Basics of clothing*
     - I think that I'm still learning, and I wouldn't make the best possible software to help address this problem.  Additionally, the only solution I can think of that hasn't been done to help speed this up is to use a camera to figure out what might look good for a person, and I don't know if I have the skill set for that yet.
 6. *Tailored clothes*
-    - I decided not to go for this one because I don't think there are many ways to speed the process up and make it easier. The only thing I could come up with is having an app do it for you with a camera.  However, with my current knowledge, I don't think this is a feasible project for me to do in a month or two.  Additionally, at that point it might be easier for the user to look up a tutorial on how to use a measuring tape to do it.
+    - I decided not to go for this one because the problem isn't very widespread, and oftentimes you can get measurements at a store.  Also, I don't think there are many ways to speed the process up (if you're doing it at home or at the store) and make it easier. The only thing I could come up with is having an app do it for you with a camera.  However, with my current knowledge, I don't think this is a feasible project for me to do in a month or two.  Additionally, at that point it might be easier for the user to look up a tutorial on how to use a measuring tape to do it.
 
 
 ## Evidence
@@ -85,8 +85,8 @@
 
 
 2. *Group Planning for Travelling*
-    1. [Planning for a trip is a major pain point. 23% of people from a survey consider it as one of the biggest pain points, and 17% of people say that ensuring everyone's wants and needs are satisfied by the itenerary is one of the biggest pain points](https://gocity.com/en/blog/trip-planning-consumer-habits-usa?utm_source=chatgpt.com) According to a study by gocity.com which included individual and group travelers, the biggest pain points for travellers include: overspending (44%), packing (26%), planning (23%), missing a scheduled flight , train, and/or bus (21%), and ensuring everyone's wants and needs are satisfied by the itenerary (17%).
-    2. [Lack of personalization leads to dissatisfaction](https://ijirt.org/publishedpaper/IJIRT183293_PAPER.pdf?utm_source=chatgpt.com) According to research published in the International Journal of Innovative Research and Technology, personalization of the travel itenerary significantly impacts customer satisfaction in the travel industry. 
+    1. [Planning for a trip is a major pain point. 23% of people from a survey consider it as one of the biggest pain points, and 17% of people say that ensuring everyone's wants and needs are satisfied by the itinerary is one of the biggest pain points](https://gocity.com/en/blog/trip-planning-consumer-habits-usa?utm_source=chatgpt.com) According to a study by gocity.com which included individual and group travelers, the biggest pain points for travellers include: overspending (44%), packing (26%), planning (23%), missing a scheduled flight , train, and/or bus (21%), and ensuring everyone's wants and needs are satisfied by the itinerary (17%).
+    2. [Lack of personalization leads to dissatisfaction](https://ijirt.org/publishedpaper/IJIRT183293_PAPER.pdf?utm_source=chatgpt.com) According to research published in the International Journal of Innovative Research and Technology, personalization of the travel itinerary significantly impacts customer satisfaction in the travel industry. 
     3. [A stronger voice in group travel planning can significantly impact the final destination](https://arxiv.org/pdf/2302.13463) Case studies show how a strong opinion clearly influences decision over the people who are more agreeable.
     4. [Group reccommendation systems are increasingly important for collective decisions.](https://www.sciencedirect.com/science/article/pii/S0957417407000863) This research considers a variety of algorithms to create a group reccomendation system, which is considered more in demand as community activities online (like purchasing something) is growing exponentially.
     5. [Travel organizers feel as though they need to keep reminding people to work on the plan](https://medium.com/design-bootcamp/simplifying-the-trip-planning-experience-for-group-trip-leaders-a-product-design-case-study-ffc3e10eb547) A case study suggests the leader has to usually keep messaging people to make sure they know the plan ahead of time
@@ -108,7 +108,7 @@
     9. [Comparable 2: Honey](https://www.joinhoney.com/explore) Honey helps with finding coupons, but not with finding clothing-specific searches
     10. [Comparable 3: Pintrist](https://www.pinterest.com/) Lets you reverse-image search products and gives you products you can buy that are similar, but has no filtering or sorting option and it's not very well known since pintrist has a different main feature.  It also doesn't have coupons.
 
-## Features and Stakeholders
+## Features
 1. *Taking Notes in Lecture*
     - Students can collaborate in real time with handwritten notes during lectures. Multiple people contribute to the same digital notebook simultaneously, each adding diagrams, annotations, or summaries.  Here are some stakeholders:
         1. User (Student/Note-taker)
@@ -135,17 +135,22 @@
         3. Tutors - Tutors often need to know what each student covered in lecture, but this is hard if the student doesn't understand themselves.  Smart summarization can help them quickly look at their notes and know what to do.  The user can also quickly pinpoint areas of confusion with the summarization and note tagging.
 
 2. *Group Planning for Travelling*
-    - A tool that allows people to input and rank each other's idea based on how much they want to do it.  For instance, if last time a friend group went out, they went to Alice's favorite attraction and Bob didn't like it, Bob's preferences could be weighted more heavily for the second activity on the itenerary. Here are some stakeholders:
+    - A tool that allows people to input and rank each other's idea based on how much they want to do it.  For instance, if last time a friend group went out, they went to Alice's favorite attraction and Bob didn't like it, Bob's preferences could be weighted more heavily for the second activity on the itinerary. Here are some stakeholders:
         1. User (Trip Planner/Participant) – Ensures their interests are considered; may feel left out if rankings aren’t balanced.
         2. Friends/Travel Companions – Benefit from fair representation of their preferences; might argue over rankings.
         3. Tourism Service Providers – Indirectly affected as their offerings are chosen more frequently if popular.
     - A tool that helps budget and split costs when travelling
+        1. One of the biggest parts about group planning is spending, and over spending.  This tool could take all of the people's wanted destinations and create an estimated cost of rental cars, ubers, the attraction costs, and show if they are over or under budget.  It also streamlines the process because the someone doesn't have to coordinate splitting costs, and the app does it for them.
+    - A tool that allows each person to make their own plans, but see each others and have shared plans
+        1. Each person can do what they want, and refrain from going to places that they don't want to go to (and avoid spending money there).  Most trip planners are for the individual person, or consider the group going together everywhere when in reality, sometimes a person wants to go to an event or place no one else does.
 
 
 3. *Right Price*
-    - checks online for it, then checks for similar clothes
-    - standalone site that compiles a bunch of clothes, has price and sustainibility and brand and reviews.  Stakeholders May
+    - Checks online using a reverse image search for simlar clothes that are cheaper, but also allows you to sort through it based on features like color, price, and more
+    - Standalone site that compiles a bunch of clothes, has price and sustainibility and brand and reviews. 
         -   User (Shopper) – Saves time finding alternatives; may experience decision fatigue.
+    - If you like a style, but it isn't working for you, a feature that lets you find other clothes of a similar style that you might like or may look better on you.
+
 
 
 
