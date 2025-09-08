@@ -137,4 +137,4 @@
 3. _Right Price For clothing_
    - **Better Price Finder** Checks online using a reverse image search for the clothes you find in person to look for others that are cheaper. Perhaps it can try finding coupons as well. However, it also addresses the limitations of platforms like Pintrist by not being as complex and being able to sort through it based on features like color, price, and more
    - **Clothes Compiler** Standalone site that compiles a bunch of clothes, has price and sustainibility and brand and reviews. The user might save some time and money looking for clothes across multiple websites.
-   - **Similar Style Finder** If you like a style, but it isn't working for you, a feature that lets you find other clothes of a similar style that you might like or may look better on you. That way, you don't regret spending money on clothes that "almost" look good on you.
+   - **Similar Style Finder** If you like a style, but it isn't working for you, this feature lets you find other clothes of a similar style that you might like or may look better on you. That way, you don't regret spending money on clothes that "almost" look good on you.
