@@ -3,56 +3,56 @@
 ## Domains
 ### Brainstorming Domains
 1. School: Studying together, keeping together deadlines, planning classes together
-2. Sports: Finding local areas to play, Practicing with friends, finding right equipment
-3. Time management: Dealing with school, clubs, social events, internships, and sleep.
+2. Basketball: Finding local areas to play, Practicing with friends, finding right equipment
+3. Time management for College Students: Dealing with school, clubs, social events, internships, and sleep.
 4. Guitar: learning, playing, and making music
 5. Internships: Keeping track of deadlines, what you've applied to, prepearing for OA's/Interviews
 6. Travelling: Finding places to go, planning with other people
 7. Clothing/Style: Finding the right clothes for you
 8. Friendships: figuring out what activities to do, when everyone is free
 9. 3d printing: Finding/creating models, using a 3D printer
-10. Safety: Specifically when you go out
+10. Safety: Staying safe when going out, especially in new or unfamiliar situations.
  
 ### Final Domains
-1. School: I'm at MIT, and I want to get as much out of it as I can before I leave. I want to get good grades, and make sure that I'm actually learning instead of just learning at a surface level.  I notice that I do better with studying when I'm with friends, and I also notice that I often recheck class deadlines (which are spread out through a bunch of websites) to make sure I never miss any.  I actually make a doc at the beginning of each semester which condenses the syllabus of each class into the grading scheme, the attendance policy, the lateness policy, and when deadlines generally are just to make it easier to check and track later in the semester.
+1. School: I’m at MIT and want to maximize my learning and performance. I focus on not just getting good grades but also truly understanding the material. I notice that I learn best when studying with friends and that I often need to double-check deadlines, which are spread across multiple websites. I create a condensed document for each semester summarizing the syllabus, grading scheme, attendance policy, and key deadlines to make tracking easier.
 2. Travelling: Whenever I travel with family or friends, planning always turns into a hassle. We have to make sure everyone is happy, balance budgets, and avoid forgetting important things. If we don’t plan carefully, the stress carries over and makes it harder to enjoy the actual trip.ourselves at our destination.
-3. Clothes/Style: I’ve struggled personally with clothing and style—learning what looks good on me, how to find clothes I like, and figuring out my style took a lot of time. I know many others go through the same process. Even once you know what works for you, it’s hard to consistently find clothing that fits both your preferences and your budget.
+3. Clothes/Style: I’ve struggled with finding a personal style, discovering clothes I like, and shopping within a budget. Even once you know what works for you, consistently finding clothes that match your preferences and budget remains difficult. I know many people face similar challenges, which makes this a relevant area to explore.
     
-### Problems
+## Problems
 1. School
     - Keeping track of deadlines is difficult: deadline sources from personal calendars and many different websites for classes
     - Taking Notes in Lecture/Recitation: lecture moves too quickly
-    - Finding a study buddy 
+    - Finding a study buddy is difficult
 2. Travelling
-    - Group planning for Travelling: Making sure everyone has a say in activities at destination
+    - Everyone doesn't always have a say in activities at destination
     - Planning itinerary at a location (not just the plane/hotel): Making sure it's feasible with time/budget constraints
     - Making sure you don't forget anything when travelling
 3. Clothes/Style
     - Using/Learning Basics of Clothing - Style is subjective, but there are some things that help your clothes look better like color and if it's the right fit. 
     - Overpaying for clothing that's not exactly what you want (whether that's online, at a different store, not eco-friendly, or with coupons).
-    - Measuring yourself for tailored clothes can be inefficient and/or inacurate (ie for suits, indian clothes, etc.)
+    - Getting accurate measurements for tailored clothing is difficult, leading to ill-fitting garments. (ie for suits, indian clothes, etc.)
 
 ### Selected
 1. *Taking Better Notes in Lecture*
-    - Sometimes the teacher moves too quickly and I can't take notes.  Sometimes I can take notes but my focus is writing everything down, not absorbing what's being said.  Additionally, some students face the dilemna between handwriting notes which is better for retention, and typing which is faster.  I know that this is a serious problem, as me and my friends have talked about it. It's also a reason that sometimes students skip lecture because lecture isn't useful if you can't absorb the material and record what you learned.  I think I also have an interesting insight into this that could make a really cool solution.  It could be a little more difficult that other problems that I could address, but I think it would be exciting and very useful to solve for many college and high school students.
+    - Sometimes the teacher moves too quickly and I can't take notes.  Sometimes I can take notes but my focus is writing everything down, not absorbing what's being said.  Additionally, some students face the dilemna between handwriting notes which is better for retention, and typing which is faster.  I know that this is a serious problem, as me and my friends have talked about it. It's also a reason that sometimes students skip lecture because lecture isn't useful if you can't absorb the material and record what you learned.  I think I also have an interesting insight into this that could make a really cool solution. 
      - Stakeholders: 
-        - Student: The student is directly affected.  Poorer notes lead to more stress, more time to review for tests, and less comprehension and retention.  This could also lead to lower test scores, and some students even skipping lecture because they don't think it's useful.
-        - Teacher/Lecturer: Students might appear disengaged if they're struggling to take notes.  They also might appear in office hours more often, and need more help.
-        - Parents/Guardians: They might worry about academic performance and study habits of their student, and might feel stressed as well.  A solution that helps their kid study would make them feel better.
+        - Student (direct user): The student is directly affected.  Poorer notes lead to more stress, more time to review for tests, and less comprehension and retention.  This could also lead to lower test scores, and some students even skipping lecture because they don't think it's useful.
+        - Teacher/Lecturer (non-user): Students might appear disengaged if they're struggling to take notes.  They also might appear in office hours more often, and need more help.
+        - Parents/Guardians (non-user): They might worry about academic performance and study habits of their student, and might feel stressed as well.  A solution that helps their kid study would make them feel better.
     
 2. *Group Planning is a Hassle When Travelling*
     - This is an issue for both travelling with friends and with family.  Sometimes making specific plans at the place gets delayed/forgotten until the last possible moment, or perhaps more vocal people get their plans in while other people don't.  Sometimes the organizer gets the most say in events, which the rest of the people don't like. Both of these problems have happened with both family and friend trips for me, and it causes unhappiness and sometimes wasted money.  I think that this is a good problem to solve because it makes sure everyone is happy with the trip, or at least has a say.  It might save time as well, and you might be able to book earlier if people don't keep forgetting to figure out what they're doing.  I think that this is a widespread problem and it can be serious because you're spending a lot of money and want to make sure everyone is happy.
     - Stakeholders:
-        - Trip Organizer:  Usually there is one person taking the lead in organizing the trip.  They might have to repetitively send out texts to get events to work together.  They could feel stressed, overwhelmed, or frusterated if the group preferences are unclear or conflicting
-        - Travel companionas (the people who are part of the trip, but aren't the "main" person orgainzing it): Might feel ignored, unhappy, or stressed if their ideas aren't being reflected in the itinerary.  Might feel even more stressed or annoyed if they are paying money for attractions that they don't want to go to.
-        - Attractions:  Delayed or last minute bookings can cause inefficiencies or lost revenue.  Additionally, if people decide not to go to a certain event due to the best attractions not being chosen, then some attractions might also lose revenue that way.
+        - Trip Organizer (direct user):  Usually there is one person taking the lead in organizing the trip.  They might have to repetitively send out texts to get events to work together.  They could feel stressed, overwhelmed, or frusterated if the group preferences are unclear or conflicting
+        - Travel companionas (direct users; the other travellers that aren't the "trip organizer"): Might feel ignored, unhappy, or stressed if their ideas aren't being reflected in the itinerary.  Might feel even more stressed or annoyed if they are paying money for attractions that they don't want to go to.
+        - Attractions (non-user; The places that the travellers decide to go to):  Delayed or last minute bookings can cause inefficiencies or lost revenue.  Additionally, if people decide not to go to a certain event due to the best attractions not being chosen, then some attractions might also lose revenue that way.
 
 3. *Right Price For clothing*
     - There's a lot of friction with this problem.  If you're in person and want to buy some clothes, some clothes, in order to save money, you have to try searching it up on the website of the store that you're at which can take a while.  You also might miss the same clothing from different stores that are cheaper, or coupons. Or potentially clothes that are more eco-friendly, have better material, or more. I think this is a serious problem and a solution could reduce friction, save money, and be useful.  It's also feasible and could have a good software solution
     - Stakeholders: 
-        - Shopper: Directly affected; currently experiences friction, wasted time, and missed savings. A solution could save money and reduce effort in price comparisons.
-        - Retailers/Stores: Indirectly affected; price comparisons may lead to lost sales if they are not competitive, but could also motivate better pricing and promotions.
-        - Fashion Brands: Indirectly affected; reputation and sales could be influenced by how their products are ranked or compared. A solution highlighting brand attributes like sustainability or quality could impact perception.
+        - Shopper (direct user): Directly affected; currently experiences friction, wasted time, and missed savings. A solution could save money and reduce effort in price comparisons.
+        - Retailers/Stores (non-user): Indirectly affected; price comparisons may lead to lost sales if they are not competitive, but could also motivate better pricing and promotions.
+        - Fashion Brands (non-user): Indirectly affected; reputation and sales could be influenced by how their products are ranked or compared. A solution highlighting brand attributes like sustainability or quality could impact perception.
 
 ### Not Selected
 1. *Keeping track of deadlines*
