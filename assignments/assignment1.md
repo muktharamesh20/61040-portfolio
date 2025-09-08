@@ -5,13 +5,13 @@
 1. School: Studying together, keeping together deadlines, planning classes together
 2. Sports: Finding local areas to play, Practicing with friends, finding right equipment
 3. Time management: Dealing with school, clubs, social events, internships, and sleep.
-4. Music: learning, playing, and making music
+4. Guitar: learning, playing, and making music
 5. Internships: Keeping track of deadlines, what you've applied to, prepearing for OA's/Interviews
 6. Travelling: Finding places to go, planning with other people
 7. Clothing/Style: Finding the right clothes for you
 8. Friendships: figuring out what activities to do, when everyone is free
 9. 3d printing: Finding/creating models, using a 3D printer
-10. Safety: All types of safety when you go out
+10. Safety: Specifically when you go out
  
 ### Final Domains
 1. School: I'm at MIT, and I want to get as much out of it as I can before I leave. I want to get good grades, and make sure that I'm actually learning instead of just learning at a surface level.  I notice that I do better with studying when I'm with friends, and I also notice that I often recheck class deadlines (which are spread out through a bunch of websites) to make sure I never miss any.  I actually make a doc at the beginning of each semester which condenses the syllabus of each class into the grading scheme, the attendance policy, the lateness policy, and when deadlines generally are just to make it easier to check and track later in the semester.
@@ -20,22 +20,22 @@
     
 ### Problems
 1. School
-    - Keeping track of deadlines: deadline sources from personal calendars and many different websites for classes
+    - Keeping track of deadlines is difficult: deadline sources from personal calendars and many different websites for classes
     - Taking Notes in Lecture/Recitation: lecture moves too quickly
-    - Finding a study buddy
+    - Finding a study buddy 
 2. Travelling
     - Group planning for Travelling: Making sure everyone has a say in activities at destination
     - Planning itinerary at a location (not just the plane/hotel): Making sure it's feasible with time/budget constraints
-    - Making sure you don't forget anything
+    - Making sure you don't forget anything when travelling
 3. Clothes/Style
     - Using/Learning Basics of Clothing - Style is subjective, but there are some things that help your clothes look better like color and if it's the right fit. 
-    - Overpaying for clothing that's cheaper online or at a different store or with coupons.
-    - Measuring yourself for tailored clothes (ie for suits, indian clothes, etc.)
+    - Overpaying for clothing that's not exactly what you want (whether that's online, at a different store, not eco-friendly, or with coupons).
+    - Measuring yourself for tailored clothes can be inefficient and/or inacurate (ie for suits, indian clothes, etc.)
 
 ### Selected
 1. *Taking Better Notes in Lecture*
     - Sometimes the teacher moves too quickly and I can't take notes.  Sometimes I can take notes but my focus is writing everything down, not absorbing what's being said.  Additionally, some students face the dilemna between handwriting notes which is better for retention, and typing which is faster.  I know that this is a serious problem, as me and my friends have talked about it. It's also a reason that sometimes students skip lecture because lecture isn't useful if you can't absorb the material and record what you learned.  I think I also have an interesting insight into this that could make a really cool solution.  It could be a little more difficult that other problems that I could address, but I think it would be exciting and very useful to solve for many college and high school students.
-     - Stakeholders: User (Student/Note-taker), Teachers (The person whose class the user is taking notes in), Parents (The parents of the user)
+     - Stakeholders: 
         - Student: The student is directly affected.  Poorer notes lead to more stress, more time to review for tests, and less comprehension and retention.  This could also lead to lower test scores, and some students even skipping lecture because they don't think it's useful.
         - Teacher/Lecturer: Students might appear disengaged if they're struggling to take notes.  They also might appear in office hours more often, and need more help.
         - Parents/Guardians: They might worry about academic performance and study habits of their student, and might feel stressed as well.  A solution that helps their kid study would make them feel better.
@@ -56,9 +56,9 @@
 
 ### Not Selected
 1. *Keeping track of deadlines*
-    - I think if this problem mattered to a person, they might have already figured out a solution via planners, iCal links, and more.  I don't think that a solution that I could come up with (ie integrating all the calendars together) would be that much better that just using iCal links.  If people don't use these other solutions, they just might not find this problem as that serious too.
+    - I think if this problem mattered to a person, they might have already figured out a solution via planners, iCal links, and more.  If people don't use these other solutions, they just might not find this problem as that serious too.
 2. *Finding time to study with someone*
-    - A lot of people just text in the group chat, or have a space to do homework already.  I don't think that this problem is very widespread.  Additionally, this gains value with more users so it might not be as valuable at the beginning.  I'm also solving a varient of this problem as a side-project, so it wouldn't be as enjoyable for me to do as a project.
+    - A lot of people just text in the group chat, or have a space to do homework already.  I don't think that this problem is very widespread.  Additionally, this gains value with more users so it might not be as valuable at the beginning.  
 3. *Planning itinerary at location: Making sure it's feasible with time/budget constraints*
     - I don't think this problem is as serious or as widespread.  I think that if you're going on vacation or travelling and already have a list of places to go, it's pretty easy to gauge whether an attraction there is too expensive for the budget. It's also not as useful as checking flight prices because you can save money with flight prices, not as much with a specific attraction (ie a museum) that you want to visit.  The problem isn't that serious, and an app might add more friction rather than reduce it.
 4. *Travel packing lists*
@@ -66,7 +66,7 @@
 5. *Basics of clothing*
     - I think that I'm still learning, and I wouldn't make the best possible software to help address this problem.  Additionally, the only solution I can think of that hasn't been done to help speed this up is to use a camera to figure out what might look good for a person, and I don't know if I have the skill set for that yet.
 6. *Tailored clothes*
-    - I decided not to go for this one because the problem isn't very widespread, and oftentimes you can get measurements at a store.  Also, I don't think there are many ways to speed the process up (if you're doing it at home or at the store) and make it easier. The only thing I could come up with is having an app do it for you with a camera.  However, with my current knowledge, I don't think this is a feasible project for me to do in a month or two.  Additionally, at that point it might be easier for the user to look up a tutorial on how to use a measuring tape to do it.
+    - I decided not to go for this one because the problem isn't very widespread, and oftentimes you can get measurements at a store.  Also, I don't think there are many ways to speed the process up (if you're doing it at home or at the store) and make it easier: it's pretty easy to just look up a Youtube video if you're having trouble. 
 
 
 ## Evidence
@@ -109,26 +109,26 @@
 
 ## Features
 1. *Taking Notes in Lecture*
-    - Students can collaborate in real time with handwritten notes during lectures. Multiple people contribute to the same digital notebook simultaneously, each adding diagrams, annotations, or summaries.  
+    - **Shared Notetaking:** Students can collaborate in real time with handwritten notes during lectures. Multiple people contribute to the same digital notebook simultaneously, each adding diagrams, annotations, or summaries.  
         - This is beneficial to the users of the app save time while taking notes, get more comprehensive notes, and have more time in class to really absorb the material.  Because it's handwritten, they can collaborate on technical classes as well, which a platform like Google Docs doesn't help them with.  This could help them get better academic performance.  
-    - Notes are synced with lecture audio, so students can play back the lecture and see exactly what they were writing at that moment. This allows selective review of confusing sections without replaying the entire lecture. However, something to consider is that students might become dependent on these recordings instead of staying engaged, and/or teachers might not like being recorded.
-    - Automated tagging of the notes and summarizing/breaking up the notes into relevant categories.  This helps save time when reviewing, and will help you identify where you got confused a little easier.  One additional stakeholder that this helps is tutors.  Tutors often need to know what each student covered in lecture, but this is hard if the student doesn't understand themselves.  Smart summarization can help them quickly look at their notes and know what to do.  The user can also quickly pinpoint areas of confusion with the summarization and note tagging.
+    - **Synced Audio with Notes:** Notes are synced with lecture audio, so students can play back the lecture and see exactly what they were writing at that moment. This allows selective review of confusing sections without replaying the entire lecture. However, something to consider is that students might become dependent on these recordings instead of staying engaged, and/or teachers might not like being recorded.
+    - **Automated tagging and summarizing of notes:** Your notes are automatically broken up and summarized by topics, with tags to help you come back to relevant parts.  This helps save time when reviewing, and will help you identify where you got confused a little easier.  
 
 2. *Group Planning is a Hassle For Travelling*
-    - A tool that allows people to input and rank each other's idea based on how much they want to do it.  For instance, if last time a friend group went out, they went to Alice's favorite attraction and Bob didn't like it, Bob's preferences could be weighted more heavily for the second activity on the itinerary. 
+    - **Attraction Ranking For Groups** A tool that allows people to input and rank each other's idea based on how much they want to do it.  For instance, if last time a friend group went out, they went to Alice's favorite attraction and Bob didn't like it, Bob's preferences could be weighted more heavily for the second activity on the itinerary. 
         - User (Trip Planner/Participant) – Ensures their interests are considered; may feel left out if rankings aren’t balanced.
         - Friends/Travel Companions – Benefit from fair representation of their preferences; might argue over rankings.
         - Tourism Service Providers – Indirectly affected as their offerings are chosen more frequently if popular.
-    - A tool that helps budget and split costs when travelling
+    - **Cost Splitter For Travel** A tool that helps budget and split costs when travelling
         - One of the biggest parts about group planning is spending, and over spending.  This tool could take all of the people's wanted destinations and create an estimated cost of rental cars, ubers, the attraction costs, and show if they are over or under budget.  It also streamlines the process because the someone doesn't have to coordinate splitting costs, and the app does it for them.
-    - A tool that allows each person to make their own plans, but see each others and have shared plans
+    - **More Personalized Trip Planner** A tool that allows each person to make their own plans, but see each others and have shared plans
         - Each person can do what they want, and refrain from going to places that they don't want to go to (and avoid spending money there).  Most trip planners are for the individual person, or consider the group going together everywhere when in reality, sometimes a person wants to go to an event or place no one else does.  
 
 
 3. Right Price For clothing*
-    - Checks online using a reverse image search for the clothes you find in person to look for others that are cheaper.  However, it also addresses the limitations of platforms like Pintrist by not being as complex and being able to sort through it based on features like color, price, and more
-    - Standalone site that compiles a bunch of clothes, has price and sustainibility and brand and reviews. The user might save some time and money looking for clothes across multiple websites.
-    - If you like a style, but it isn't working for you, a feature that lets you find other clothes of a similar style that you might like or may look better on you.  That way, you don't regret spending money on clothes that almost look good on you.
+    - **Better Price Finder** Checks online using a reverse image search for the clothes you find in person to look for others that are cheaper. Perhaps it can try finding coupons as well. However, it also addresses the limitations of platforms like Pintrist by not being as complex and being able to sort through it based on features like color, price, and more
+    - **Clothes Compiler** Standalone site that compiles a bunch of clothes, has price and sustainibility and brand and reviews. The user might save some time and money looking for clothes across multiple websites.
+    - **Similar Style Finder**  If you like a style, but it isn't working for you, a feature that lets you find other clothes of a similar style that you might like or may look better on you.  That way, you don't regret spending money on clothes that "almost" look good on you.
 
 
 
