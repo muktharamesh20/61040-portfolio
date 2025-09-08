@@ -34,14 +34,13 @@
 
 ### Selected
 1. *Taking Better Notes in Lecture*
-    - Sometimes the teacher moves too quickly and I can't take notes.  Sometimes I can take notes but my focus is writing everything down, not absorbing what's being said.  Additionally, some students face the dilemna between handwriting notes which is better for retention, and typing which is faster.
-    - I know that this is a serious problem, as me and my friends have talked about it. It's also a reason that sometimes students skip lecture (even though it's a good time to ask questions) because lecture isn't useful if you can't absorb the material and record what you learned.  I think I also have an interesting insight into this that could make a really cool solution.  It could be a little more difficult that other problems that I could address, but I think it would be exciting and very useful to solve for many college and high school students.
+    - Sometimes the teacher moves too quickly and I can't take notes.  Sometimes I can take notes but my focus is writing everything down, not absorbing what's being said.  Additionally, some students face the dilemna between handwriting notes which is better for retention, and typing which is faster.  I know that this is a serious problem, as me and my friends have talked about it. It's also a reason that sometimes students skip lecture because lecture isn't useful if you can't absorb the material and record what you learned.  I think I also have an interesting insight into this that could make a really cool solution.  It could be a little more difficult that other problems that I could address, but I think it would be exciting and very useful to solve for many college and high school students.
      - Stakeholders: User (Student/Note-taker), Teachers (The person whose class the user is taking notes in), Parents (The parents of the user)
         - Student: The student is directly affected.  Poorer notes lead to more stress, more time to review for tests, and less comprehension and retention.  This could also lead to lower test scores, and some students even skipping lecture because they don't think it's useful.
         - Teacher/Lecturer: Students might appear disengaged if they're struggling to take notes.  They also might appear in office hours more often, and need more help.
         - Parents/Guardians: They might worry about academic performance and study habits of their student, and might feel stressed as well.  A solution that helps their kid study would make them feel better.
     
-2. *Group Planning is a hassle for Travelling*
+2. *Group Planning is a Hassle When Travelling*
     - This is an issue for both travelling with friends and with family.  Sometimes making specific plans at the place gets delayed/forgotten until the last possible moment, or perhaps more vocal people get their plans in while other people don't.  Sometimes the organizer gets the most say in events, which the rest of the people don't like. Both of these problems have happened with both family and friend trips for me, and it causes unhappiness and sometimes wasted money.  I think that this is a good problem to solve because it makes sure everyone is happy with the trip, or at least has a say.  It might save time as well, and you might be able to book earlier if people don't keep forgetting to figure out what they're doing.  I think that this is a widespread problem and it can be serious because you're spending a lot of money and want to make sure everyone is happy.
     - Stakeholders:
         - Trip Organizer:  Usually there is one person taking the lead in organizing the trip.  They might have to repetitively send out texts to get events to work together.  They could feel stressed, overwhelmed, or frusterated if the group preferences are unclear or conflicting
@@ -110,46 +109,26 @@
 
 ## Features
 1. *Taking Notes in Lecture*
-    - Students can collaborate in real time with handwritten notes during lectures. Multiple people contribute to the same digital notebook simultaneously, each adding diagrams, annotations, or summaries.  Here are some stakeholders:
-        1. User (Student/Note-taker)
-            - Impacts: the users of the app save time while taking notes, get more comprehensive notes, and have more time in class to really absorb the material.  Because it's handwritten, they can collaborate on technical classes as well, which a platform like Google Docs doesn't help them with.  This could help them get better academic performance 
-            - Potentially negative impacts: Suffers if collaborating with someone who doesn’t contribute.
-        2. Teacher
-            - Some high school and potentially college teachers don't like students collaborating on their notes as those notes might be used for assessments, or the teachers might simply be worried about accountability.  However, other teachers might also prefer and encourage it because it can lead to increased engagement and performance from students.
-        3. Parents and Guardians
-            - Parents want their students to do well in school, and thus they would likely like this feature provided that it actually helps students.
-            - Potentially negative impact: They may worry about over-reliance on peers when note-taking
-    - Notes are synced with lecture audio, so students can play back the lecture and see exactly what they were writing at that moment. This allows selective review of confusing sections without replaying the entire lecture.  Here are some stakeholders:
-        1. User (Student/Note-taker)
-            - Positive: Easy to focus on confusing sections without replaying the whole lecture; students can focus on what's currently happening rather than falling behind on note-taking stress-free.
-            - Negative: Possible dependency on the audio feature instead of engaging actively during lecture.
-        2. Teacher/Lecturer
-            - Some teachers/lecturers don't want to be recorded
-            - Students might not be as engaged if they plan on going back
-            - Some teachers might like it if students retain information better
-        3. Friends/Non-Users
-            - If a friend is stuck or missed something from lecture, they can also get help from you because you can pinpoint exactly where you were when writing the place they got stuck on.
-    - Automated tagging of the notes and summarizing/breaking up the notes into relevant categories.  This helps save time when reviewing, and will help you identify where you got confused a little easier.
-        1. User (Student/Note-taker) - saves time when reviewing, helps identify key concepts and their connections quickly
-        2. Teacher - It might help students identify the key points easier, so the teacher would likely be happy because it helps the student study
-        3. Tutors - Tutors often need to know what each student covered in lecture, but this is hard if the student doesn't understand themselves.  Smart summarization can help them quickly look at their notes and know what to do.  The user can also quickly pinpoint areas of confusion with the summarization and note tagging.
+    - Students can collaborate in real time with handwritten notes during lectures. Multiple people contribute to the same digital notebook simultaneously, each adding diagrams, annotations, or summaries.  
+        - This is beneficial to the users of the app save time while taking notes, get more comprehensive notes, and have more time in class to really absorb the material.  Because it's handwritten, they can collaborate on technical classes as well, which a platform like Google Docs doesn't help them with.  This could help them get better academic performance.  
+    - Notes are synced with lecture audio, so students can play back the lecture and see exactly what they were writing at that moment. This allows selective review of confusing sections without replaying the entire lecture. However, something to consider is that students might become dependent on these recordings instead of staying engaged, and/or teachers might not like being recorded.
+    - Automated tagging of the notes and summarizing/breaking up the notes into relevant categories.  This helps save time when reviewing, and will help you identify where you got confused a little easier.  One additional stakeholder that this helps is tutors.  Tutors often need to know what each student covered in lecture, but this is hard if the student doesn't understand themselves.  Smart summarization can help them quickly look at their notes and know what to do.  The user can also quickly pinpoint areas of confusion with the summarization and note tagging.
 
-2. *Group Planning for Travelling*
-    - A tool that allows people to input and rank each other's idea based on how much they want to do it.  For instance, if last time a friend group went out, they went to Alice's favorite attraction and Bob didn't like it, Bob's preferences could be weighted more heavily for the second activity on the itinerary. Here are some stakeholders:
-        1. User (Trip Planner/Participant) – Ensures their interests are considered; may feel left out if rankings aren’t balanced.
-        2. Friends/Travel Companions – Benefit from fair representation of their preferences; might argue over rankings.
-        3. Tourism Service Providers – Indirectly affected as their offerings are chosen more frequently if popular.
+2. *Group Planning is a Hassle For Travelling*
+    - A tool that allows people to input and rank each other's idea based on how much they want to do it.  For instance, if last time a friend group went out, they went to Alice's favorite attraction and Bob didn't like it, Bob's preferences could be weighted more heavily for the second activity on the itinerary. 
+        - User (Trip Planner/Participant) – Ensures their interests are considered; may feel left out if rankings aren’t balanced.
+        - Friends/Travel Companions – Benefit from fair representation of their preferences; might argue over rankings.
+        - Tourism Service Providers – Indirectly affected as their offerings are chosen more frequently if popular.
     - A tool that helps budget and split costs when travelling
-        1. One of the biggest parts about group planning is spending, and over spending.  This tool could take all of the people's wanted destinations and create an estimated cost of rental cars, ubers, the attraction costs, and show if they are over or under budget.  It also streamlines the process because the someone doesn't have to coordinate splitting costs, and the app does it for them.
+        - One of the biggest parts about group planning is spending, and over spending.  This tool could take all of the people's wanted destinations and create an estimated cost of rental cars, ubers, the attraction costs, and show if they are over or under budget.  It also streamlines the process because the someone doesn't have to coordinate splitting costs, and the app does it for them.
     - A tool that allows each person to make their own plans, but see each others and have shared plans
-        1. Each person can do what they want, and refrain from going to places that they don't want to go to (and avoid spending money there).  Most trip planners are for the individual person, or consider the group going together everywhere when in reality, sometimes a person wants to go to an event or place no one else does.
+        - Each person can do what they want, and refrain from going to places that they don't want to go to (and avoid spending money there).  Most trip planners are for the individual person, or consider the group going together everywhere when in reality, sometimes a person wants to go to an event or place no one else does.  
 
 
-3. *Right Price*
-    - Checks online using a reverse image search for simlar clothes that are cheaper, but also allows you to sort through it based on features like color, price, and more
-    - Standalone site that compiles a bunch of clothes, has price and sustainibility and brand and reviews. 
-        -   User (Shopper) – Saves time finding alternatives; may experience decision fatigue.
-    - If you like a style, but it isn't working for you, a feature that lets you find other clothes of a similar style that you might like or may look better on you.
+3. Right Price For clothing*
+    - Checks online using a reverse image search for the clothes you find in person to look for others that are cheaper.  However, it also addresses the limitations of platforms like Pintrist by not being as complex and being able to sort through it based on features like color, price, and more
+    - Standalone site that compiles a bunch of clothes, has price and sustainibility and brand and reviews. The user might save some time and money looking for clothes across multiple websites.
+    - If you like a style, but it isn't working for you, a feature that lets you find other clothes of a similar style that you might like or may look better on you.  That way, you don't regret spending money on clothes that almost look good on you.
 
 
 
