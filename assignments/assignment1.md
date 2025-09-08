@@ -125,7 +125,7 @@
         - Each person can do what they want, and refrain from going to places that they don't want to go to (and avoid spending money there).  Most trip planners are for the individual person, or consider the group going together everywhere when in reality, sometimes a person wants to go to an event or place no one else does.  
 
 
-3. Right Price For clothing*
+3. *Right Price For clothing*
     - **Better Price Finder** Checks online using a reverse image search for the clothes you find in person to look for others that are cheaper. Perhaps it can try finding coupons as well. However, it also addresses the limitations of platforms like Pintrist by not being as complex and being able to sort through it based on features like color, price, and more
     - **Clothes Compiler** Standalone site that compiles a bunch of clothes, has price and sustainibility and brand and reviews. The user might save some time and money looking for clothes across multiple websites.
     - **Similar Style Finder**  If you like a style, but it isn't working for you, a feature that lets you find other clothes of a similar style that you might like or may look better on you.  That way, you don't regret spending money on clothes that "almost" look good on you.
