@@ -106,7 +106,9 @@ enablePAT(personalAccessToken: PersonalAcessToken):
 - **requires** the personal access token exists and the disabled flag is true
 - **effect** sets the disabled flag to false
 
-Passowrd authentication differs from personal access tokens (PATS) in a few ways.  They both are meant for the account-holder as it gives access to all repositories in the organizations that you are a part of, and your personal repos.  PATS are more secure than regular passwords, and you must already have an account to generate one.  Additionally you can revoke access to using them, and in the case that it leaks, the user can't log into your account itself and you can simply disable that token.  It's more secure (fine-grained are even more secure with only specific repos and permissions rather than giving you all access) than passwords, and many CLI tools use that over passwords.  
+Passowrd authentication differs from personal access tokens (PATS) in a few ways. PATS are more secure than regular passwords being randomly generated, and you must already have an account to generate one.  Additionally you can revoke access to using them, and in the case that it leaks, the user can't log into your account itself and you can simply disable that token.  It's more secure (fine-grained are even more secure with only specific repos and permissions rather than giving you all access) than passwords, and many CLI tools use that over passwords.  
+
+I would change Github documentation to not say that it's an alternative to a password because that's more confusing since you're confusing concepts.  I would say it's a more secure way to use access repos and to protect your account.
 
 # Exercise 4
 
@@ -223,4 +225,4 @@ authenticateUser(userLocation: String, storeLocation): boolean
 - **requires** the storeLocation exists
 - **effect** returns that the purchaser is suspicious if the distance between the userLocation and the storeLocation is greater than acceptableDistance associated with the store location
 
-Subtleties: this allows multiple different stores from the same location (ie many stores in a mall).  Also, it makes sure each store location is only listed once because it's a set.
+Subtleties: This structure allows multiple different stores from the same location (ie many stores in a mall).  Also, it makes sure each store location is only listed once because it's a set.
