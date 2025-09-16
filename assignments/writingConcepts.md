@@ -117,7 +117,7 @@ I would change Github documentation to not say that it's an alternative to a pas
 
 **purpose** Track the number of hours that clients use a specific software
 
-**principle** The company registers the project.  Then, if a client uses the software, an employee marks the time that the client starts using the software.  When the client stops using the software, the employee stops the time used.
+**principle** The company registers the project.  Then, if a client uses the software, an employee marks the time that the client starts using the software.  When the client stops using the software, the employee stops the time used.  Then, the company can charge the client based on the total time recorded.
 
 **state**
 
