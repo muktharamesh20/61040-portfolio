@@ -140,7 +140,7 @@ changeStartTime(session: Session, startTime: dateTime): Session
 - **requires** that the session exists
 - **effects** changes the start time to startTime
 
-Subtiltes: An employee might forget to end or start a session on time, so there exists actions to remedy this.
+Subtleties: An employee might forget to end or start a session on time, so there exists actions to remedy this.
 
 ## Conference Room Booking
 **concept** RoomBooking\[Rooms, User]
@@ -184,7 +184,7 @@ cancelReservation(reservation: Reservation)
 - **requires** the reservation exists
 - **effect** deletes the reservation, freeing up the time for other people to reserve the room
 
-Subtiltes: If someone reserves a room already, we need to figure out what to do if the company/university wants to make that part unbookable.  This system ensures that the time is guaranteed if you book the time, so it just doesn't allow the company/university to do this.  Perhaps they could contact the bookers directly if they really needed to.
+Subtleties: If someone reserves a room already, we need to figure out what to do if the company/university wants to make that part unbookable.  This system ensures that the time is guaranteed if you book the time, so it just doesn't allow the company/university to do this.  Perhaps they could contact the bookers directly if they really needed to.
 
 ## Address Verification\[Store]
 **concept** AddressVerification
