@@ -78,7 +78,7 @@ confirm (username: String, token: String)
 
 **concept**: PersonalAccessToken\[User]
 
-**purpose**: grant access to all repos of a particular user securely
+**purpose**: authenticate a user
 
 **principle**: An authenticated user to an application wants to grant you (via the CLI) or another application access to its resources (ie a repo).  The user generates a personal access token. They then input this personal access token into the CLI/other application, which authenticates them as being them so now they can manipulate the resources (ie push, pull, publish repos) and be treated like the user.  They cannot use this to log into the real application itself however, unlike a password.
 
@@ -92,15 +92,21 @@ a set of PersonalAcessTokens with
 
 generatePAT(user: User): PersonalAcessToken
 - **requires** user exists and is authenticated
-- **effect** creates a personal access token and shares it with user
+- **effect** creates a personal access token and shares it with user, and sets the disabled flag to false
 
 authenticate(personalAccessToken: PersonalAcessToken): User
 - **requires** personalAccessToken exists and it is not disabled
 - **effect** none
 
-Passowrd authentication differs from personal access tokens (PATS) in a few ways.  They both are meant for the account-holder as it gives access to all repositories in the organizations that you are a part of, and your personal repos.  PATS are more secure than regular passwords, and you must already have an account to generate one.  Additionally you can revoke access to using them, and in the case that it leaks, the user can't log into your account itself and you can simply disable that token.  It's more secure (fine-grained are even more secure with only specific repos and permissions rather than giving you all access) than passwords, and many CLI tools use that over passwords.  
+disablePAT(personalAccessToken: PersonalAcessToken):
+- **requires** the personal access token exists and the disabled flag is false
+- **effect** sets the disabled flag to true
 
-Note: technically Github also requrires a username with the CLI, but it isn't used to authenticate.  In order to be more general for all PersonalAccessTokens, I chose to omit that argument in authenticate().
+enablePAT(personalAccessToken: PersonalAcessToken):
+- **requires** the personal access token exists and the disabled flag is true
+- **effect** sets the disabled flag to false
+
+Passowrd authentication differs from personal access tokens (PATS) in a few ways.  They both are meant for the account-holder as it gives access to all repositories in the organizations that you are a part of, and your personal repos.  PATS are more secure than regular passwords, and you must already have an account to generate one.  Additionally you can revoke access to using them, and in the case that it leaks, the user can't log into your account itself and you can simply disable that token.  It's more secure (fine-grained are even more secure with only specific repos and permissions rather than giving you all access) than passwords, and many CLI tools use that over passwords.  
 
 # Exercise 4
 
