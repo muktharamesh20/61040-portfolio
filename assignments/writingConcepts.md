@@ -60,7 +60,7 @@ Each user must have a unique username.  Otherwise, we can't distinguish between 
 **actions**
 register (username: String, password: String, email: String): (user: User, token: String)
 - **requires:** the username does not exist
-- **effect:** create a new user with this username and password
+- **effect:** create a new user with this username and password, with Confirmed equal to true and a token is generated.
 
 authenticate (username: String, password: String): (user: User)
 - **requires:** the username and password combination exists in the set of users
@@ -94,3 +94,88 @@ Passowrd authentication differs from personal access tokens (PATS) in a few ways
 Note: technically Github also requrires a username with the CLI, but it isn't used to authenticate.  In order to be more general for all PersonalAccessTokens, I chose to omit that argument in authenticate().
 
 # Exercise 4
+
+## Billable Hours Tracking
+**concept** BillingHoursTracking
+**purpose** Track the number of hours that clients use a specific software
+**principle** The company registers the project.  Then, if a client uses the software, an employee marks the time that the client starts using the software.  When the client stops using the software, the employee stops the time used.
+**state**
+a set of Projects with
+    - number Totalhours
+    - a set of Sessions
+a set of Sessions with
+    - a Project
+    - a string Description
+    - a dateTime Start
+    - a dateTime? End
+
+**actions**
+startSession(project: Project, notes: String): Session
+    - **requires** requires that project exists, and another session is not currently running
+    - **effects** creates a new session associated with the project with the current time and uses notes as a description for the project
+endSession(session: Session): 
+    - **requires** requires that the session exists and that it hasn't ended yet
+    - **effects** ends the session with the current time, 
+changeEndTime(session: Session, endTime: dateTime): Session
+    - **requires** that the session exists and that it has an endtime
+    - **effects** changes the end time to endTime
+changeStartTime(session: Session, startTime: dateTime): Session
+    - **requires** that the session exists
+    - **effects** changes the start time to startTime
+
+Subtiltes: An employee might forget to end or start a session on time, so there exists actions to remedy this.
+
+## Conference Room Booking
+**concept** RoomBooking\[Rooms, User]
+**purpose** reduce scheduling conflicts of people who need conference rooms
+**principle** the company or university department specifies rooms that can be rented out, as well as what time that they are not open.  A person who wants to use a room reserves a time period to use the room, and then can be assured of having the room free at that time.
+**state** 
+a set of UnbookableSlots with
+    - a time StartTime
+    - a time EndTime
+    - a Room
+a set of Reservations with
+    - a User
+    - a Room
+    - a StartTime
+    - an EndTime
+a set of Rooms with
+    - a set of UnbookableSlots
+    - a set of Reservations
+**actions** 
+disableBooking(room: Room, startTime: Time, endTime: Time): UnbookableSlot
+    - **requires** the room exists, and there are no reservations at the same time
+    - **effects** If there's an overlapping unbookable slot associated with the room, merge it with this unbookable slot.  Otherwise, create a new unbookableSlot.
+enableBooking(room: Room, startTime: Time, endTime: Time):
+    - **requires** startTime and endTime fall within an unbookable slot associated with the room
+    - **effect** Remove the time between startTime to endTime from the unbookableSlots associated with the room.  If needed, split up the unbookable slot that contains the startTime and endTime.
+reserveRoom(user: User, room: Room, startTime: Time, endTime: Time): Reservation
+    - **requires** the room exists and has the interval [startTime, endTime) does not overlap with any reservations or unbookable slots with the associated room
+    - **effects** creates a reservation associated with the room for the specified times.
+cancelReservation(reservation: Reservation)
+    - **requires** the reservation exists
+    - **effect** deletes the reservation, freeing up the time for other people to reserve the room
+
+Subtiltes: If someone reserves a room already, we need to figure out what to do if the company/university wants to make that part unbookable.  This system ensures that the time is guaranteed if you book the time, so it just doesn't allow the company/university to do this.  Perhaps they could contact the bookers directly if they really needed to.
+
+## Address Verification\[Store]
+**concept** AddressVerification
+**purpose** fraud protection
+**principle** a company adds all their locations with their addresses.  a user attempts to buy something from a store and provides their address.  If their address is an acceptable distance away, they are authenticated and the purchase goes through.  Otherwise, they are not verified.
+**state**
+a set of StoreLocations with
+    - a string Address
+    - a number AcceptableDistance
+    - a Store
+**actions**
+addStoreLocation(store: Store, address: Address, acceptableDistance: Number):
+    - **requires** the address isn't already used by the store
+    - **effect** creates a new store location associated with the store specified as well as an acceptable distance a customer could be located from it
+removeStoreLocation(StoreLocation: storeLcation):
+    - **requires** the storeLocation exists
+    - **effect** removes the store location
+authenticateUser(userLocation: String, storeLocation): boolean
+    - **requires** the storeLocation exists
+    - **effect** returns that the purchaser is suspicious if the distance between the user's location and the store location is greater than acceptableDistance associated with the store location
+
+Subtleties: this allows multiple different stores from the same location (ie many stores in a mall).  Also, it makes sure each store location is only listed once because it's a set.
