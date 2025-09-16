@@ -50,6 +50,7 @@ authenticate (username: String, password: String): (user: User)
 Each user must have a unique username.  Otherwise, we can't distinguish between whose trying to become authenticated.  It is preserved because of the specs of the actions.  Specifically, register only allows registration with a username if it doesn't already exist in the set of Users.
 
 ## One widely used extension of this concept requires that registration be confirmed by email. Extend the concept to include this functionality. (Hints: you should add (1) an extra result variable to the register action that returns a secret token that (via a sync) will be emailed to the user; (2) a new confirm action that takes a username and a secret token and completes the registration; (3) whatever additional state is needed to support this behavior.)
+
 **State**
 - a set of Users with
 - a string Username
@@ -208,8 +209,12 @@ removeStoreLocation(StoreLocation: storeLcation):
 - **requires** the storeLocation exists
 - **effect** removes the store location
 
+modifyAcceptableDistance(StoreLocation: storeLcation, newAcceptableDistance: number)
+- **requires** the storeLocation exists
+- **effect** modifies the acceptable distance from the store location to the distance newAcceptableDistance miles
+
 authenticateUser(userLocation: String, storeLocation): boolean
 - **requires** the storeLocation exists
-- **effect** returns that the purchaser is suspicious if the distance between the user's location and the store location is greater than acceptableDistance associated with the store location
+- **effect** returns that the purchaser is suspicious if the distance between the userLocation and the storeLocation is greater than acceptableDistance associated with the store location
 
 Subtleties: this allows multiple different stores from the same location (ie many stores in a mall).  Also, it makes sure each store location is only listed once because it's a set.
