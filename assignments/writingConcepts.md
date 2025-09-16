@@ -33,9 +33,9 @@ This way, another concept can deal with users and we are more modularized and ge
 # Exercise 2: Extending a familiar concept
 ## Complete the definition of the concept state.
 **state**
-- a set of Users with
-    - a string Username
-    - a string Password
+a set of Users with
+- a string Username
+- a string Password
 
 ## Write a requires/effects specification for each of the two actions. (Hints: The register action creates and returns a new user. The authenticate action is primarily a guard, and doesn’t mutate the state.)
 register (username: String, password: String): (user: User)
@@ -52,12 +52,13 @@ Each user must have a unique username.  Otherwise, we can't distinguish between 
 ## One widely used extension of this concept requires that registration be confirmed by email. Extend the concept to include this functionality. (Hints: you should add (1) an extra result variable to the register action that returns a secret token that (via a sync) will be emailed to the user; (2) a new confirm action that takes a username and a secret token and completes the registration; (3) whatever additional state is needed to support this behavior.)
 **State**
 - a set of Users with
-    - a string Username
-    - a string Password
-    - a boolean Confirmed
-    - a string Token
+- a string Username
+- a string Password
+- a boolean Confirmed
+- a string Token
 
 **actions**
+
 register (username: String, password: String, email: String): (user: User, token: String)
 - **requires:** the username does not exist
 - **effect:** create a new user with this username and password, with Confirmed equal to true and a token is generated.
@@ -74,20 +75,27 @@ confirm (username: String, token: String)
 # Exercise 3: Comparing concepts
 ## Deliverables: a concept specification for PersonalAccessToken and a succinct note about how it differs from PasswordAuthentication and how you might change the GitHub documentation to explain this.
 
-**concept** PersonalAccessToken\[User]
-**purpose** grant access to all repos of a particular user securely
-**principle** An authenticated user to an application wants to grant you (via the CLI) or another application access to its resources (ie a repo).  The user generates a personal access token. They then input this personal access token into the CLI/other application, which authenticates them as being them so now they can manipulate the resources (ie push, pull, publish repos) and be treated like the user.  They cannot use this to log into the real application itself however, unlike a password.
+**concept**: PersonalAccessToken\[User]
+
+**purpose**: grant access to all repos of a particular user securely
+
+**principle**: An authenticated user to an application wants to grant you (via the CLI) or another application access to its resources (ie a repo).  The user generates a personal access token. They then input this personal access token into the CLI/other application, which authenticates them as being them so now they can manipulate the resources (ie push, pull, publish repos) and be treated like the user.  They cannot use this to log into the real application itself however, unlike a password.
+
 **state**
+
 a set of PersonalAcessTokens with 
-    - a User
-    - a boolean Disabled
+- a User
+- a boolean Disabled
+
 **actions**
+
 generatePAT(user: User): (personalAccessToken: PersonalAcessToken)
-    - **requires** user exists and is authenticated
-    - **effect** creates a personal access token and shares it with user
+- **requires** user exists and is authenticated
+- **effect** creates a personal access token and shares it with user
+
 authenticate(personalAccessToken: PersonalAcessToken): (user: User)
-    - **requires** personalAccessToken exists and it is not disabled
-    - **effect** none
+- **requires** personalAccessToken exists and it is not disabled
+- **effect** none
 
 Passowrd authentication differs from personal access tokens (PATS) in a few ways.  They both are meant for the account-holder as it gives access to all repositories in the organizations that you are a part of, and your personal repos.  PATS are more secure than regular passwords, and you must already have an account to generate one.  Additionally you can revoke access to using them, and in the case that it leaks, the user can't log into your account itself and you can simply disable that token.  It's more secure (fine-grained are even more secure with only specific repos and permissions rather than giving you all access) than passwords, and many CLI tools use that over passwords.  
 
@@ -97,85 +105,111 @@ Note: technically Github also requrires a username with the CLI, but it isn't us
 
 ## Billable Hours Tracking
 **concept** BillingHoursTracking
+
 **purpose** Track the number of hours that clients use a specific software
+
 **principle** The company registers the project.  Then, if a client uses the software, an employee marks the time that the client starts using the software.  When the client stops using the software, the employee stops the time used.
+
 **state**
+
 a set of Projects with
-    - number Totalhours
-    - a set of Sessions
+- number Totalhours
+- a set of Sessions
+
 a set of Sessions with
-    - a Project
-    - a string Description
-    - a dateTime Start
-    - a dateTime? End
+- a Project
+- a string Description
+- a dateTime Start
+- a dateTime? End
 
 **actions**
+
 startSession(project: Project, notes: String): Session
-    - **requires** requires that project exists, and another session is not currently running
-    - **effects** creates a new session associated with the project with the current time and uses notes as a description for the project
+- **requires** requires that project exists, and another session is not currently running
+- **effects** creates a new session associated with the project with the current time and uses notes as a description for the project
+
 endSession(session: Session): 
-    - **requires** requires that the session exists and that it hasn't ended yet
-    - **effects** ends the session with the current time, 
+- **requires** requires that the session exists and that it hasn't ended yet
+- **effects** ends the session with the current time
+
 changeEndTime(session: Session, endTime: dateTime): Session
-    - **requires** that the session exists and that it has an endtime
-    - **effects** changes the end time to endTime
+- **requires** that the session exists and that it has an endtime
+- **effects** changes the end time to endTime
+
 changeStartTime(session: Session, startTime: dateTime): Session
-    - **requires** that the session exists
-    - **effects** changes the start time to startTime
+- **requires** that the session exists
+- **effects** changes the start time to startTime
 
 Subtiltes: An employee might forget to end or start a session on time, so there exists actions to remedy this.
 
 ## Conference Room Booking
 **concept** RoomBooking\[Rooms, User]
+
 **purpose** reduce scheduling conflicts of people who need conference rooms
+
 **principle** the company or university department specifies rooms that can be rented out, as well as what time that they are not open.  A person who wants to use a room reserves a time period to use the room, and then can be assured of having the room free at that time.
+
 **state** 
+
 a set of UnbookableSlots with
-    - a time StartTime
-    - a time EndTime
-    - a Room
+- a time StartTime
+- a time EndTime
+- a Room
+
 a set of Reservations with
-    - a User
-    - a Room
-    - a StartTime
-    - an EndTime
+- a User
+- a Room
+- a StartTime
+- an EndTime
+
 a set of Rooms with
-    - a set of UnbookableSlots
-    - a set of Reservations
+- a set of UnbookableSlots
+- a set of Reservations
+
 **actions** 
+
 disableBooking(room: Room, startTime: Time, endTime: Time): UnbookableSlot
-    - **requires** the room exists, and there are no reservations at the same time
-    - **effects** If there's an overlapping unbookable slot associated with the room, merge it with this unbookable slot.  Otherwise, create a new unbookableSlot.
+- **requires** the room exists, and there are no reservations at the same time
+- **effects** If there's an overlapping unbookable slot associated with the room, merge it with this unbookable slot.  Otherwise, create a new unbookableSlot.
+
 enableBooking(room: Room, startTime: Time, endTime: Time):
-    - **requires** startTime and endTime fall within an unbookable slot associated with the room
-    - **effect** Remove the time between startTime to endTime from the unbookableSlots associated with the room.  If needed, split up the unbookable slot that contains the startTime and endTime.
+- **requires** startTime and endTime fall within an unbookable slot associated with the room
+- **effect** Remove the time between startTime to endTime from the unbookableSlots associated with the room.  If needed, split up the unbookable slot that contains the startTime and endTime.
+
 reserveRoom(user: User, room: Room, startTime: Time, endTime: Time): Reservation
-    - **requires** the room exists and has the interval [startTime, endTime) does not overlap with any reservations or unbookable slots with the associated room
-    - **effects** creates a reservation associated with the room for the specified times.
+- **requires** the room exists and has the interval [startTime, endTime) does not overlap with any reservations or unbookable slots with the associated room
+- **effects** creates a reservation associated with the room for the specified times.
+
 cancelReservation(reservation: Reservation)
-    - **requires** the reservation exists
-    - **effect** deletes the reservation, freeing up the time for other people to reserve the room
+- **requires** the reservation exists
+- **effect** deletes the reservation, freeing up the time for other people to reserve the room
 
 Subtiltes: If someone reserves a room already, we need to figure out what to do if the company/university wants to make that part unbookable.  This system ensures that the time is guaranteed if you book the time, so it just doesn't allow the company/university to do this.  Perhaps they could contact the bookers directly if they really needed to.
 
 ## Address Verification\[Store]
 **concept** AddressVerification
+
 **purpose** fraud protection
+
 **principle** a company adds all their locations with their addresses.  a user attempts to buy something from a store and provides their address.  If their address is an acceptable distance away, they are authenticated and the purchase goes through.  Otherwise, they are not verified.
+
 **state**
 a set of StoreLocations with
-    - a string Address
-    - a number AcceptableDistance
-    - a Store
+- a string Address
+- a number AcceptableDistance
+- a Store
+
 **actions**
 addStoreLocation(store: Store, address: Address, acceptableDistance: Number):
-    - **requires** the address isn't already used by the store
-    - **effect** creates a new store location associated with the store specified as well as an acceptable distance a customer could be located from it
+- **requires** the address isn't already used by the store
+- **effect** creates a new store location associated with the store specified as well as an acceptable distance a customer could be located from it
+
 removeStoreLocation(StoreLocation: storeLcation):
-    - **requires** the storeLocation exists
-    - **effect** removes the store location
+- **requires** the storeLocation exists
+- **effect** removes the store location
+
 authenticateUser(userLocation: String, storeLocation): boolean
-    - **requires** the storeLocation exists
-    - **effect** returns that the purchaser is suspicious if the distance between the user's location and the store location is greater than acceptableDistance associated with the store location
+- **requires** the storeLocation exists
+- **effect** returns that the purchaser is suspicious if the distance between the user's location and the store location is greater than acceptableDistance associated with the store location
 
 Subtleties: this allows multiple different stores from the same location (ie many stores in a mall).  Also, it makes sure each store location is only listed once because it's a set.
