@@ -52,7 +52,7 @@ Each user must have a unique username.  Otherwise, we can't distinguish between 
 ## One widely used extension of this concept requires that registration be confirmed by email. Extend the concept to include this functionality. (Hints: you should add (1) an extra result variable to the register action that returns a secret token that (via a sync) will be emailed to the user; (2) a new confirm action that takes a username and a secret token and completes the registration; (3) whatever additional state is needed to support this behavior.)
 
 **State**
-- a set of Users with
+a set of Users with
 - a string Username
 - a string Password
 - a boolean Confirmed
