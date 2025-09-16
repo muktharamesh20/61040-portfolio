@@ -38,11 +38,11 @@ a set of Users with
 - a string Password
 
 ## Write a requires/effects specification for each of the two actions. (Hints: The register action creates and returns a new user. The authenticate action is primarily a guard, and doesn’t mutate the state.)
-register (username: String, password: String): (user: User)
+register (username: String, password: String): User
 - **requires:** the username does not exist
 - **effect:** create a new user with this username and password
 
-authenticate (username: String, password: String): (user: User)
+authenticate (username: String, password: String): User
 - **requires:** the username and password combination exists in the set of users
 - **effect:** none
 
@@ -60,11 +60,11 @@ Each user must have a unique username.  Otherwise, we can't distinguish between 
 
 **actions**
 
-register (username: String, password: String, email: String): (user: User, token: String)
+register (username: String, password: String, email: String): (User, Token)
 - **requires:** the username does not exist
 - **effect:** create a new user with this username and password, with Confirmed equal to true and a token is generated.
 
-authenticate (username: String, password: String): (user: User)
+authenticate (username: String, password: String): User
 - **requires:** the username and password combination exists in the set of users
 - **effect:** none
 
@@ -90,11 +90,11 @@ a set of PersonalAcessTokens with
 
 **actions**
 
-generatePAT(user: User): (personalAccessToken: PersonalAcessToken)
+generatePAT(user: User): PersonalAcessToken
 - **requires** user exists and is authenticated
 - **effect** creates a personal access token and shares it with user
 
-authenticate(personalAccessToken: PersonalAcessToken): (user: User)
+authenticate(personalAccessToken: PersonalAcessToken): User
 - **requires** personalAccessToken exists and it is not disabled
 - **effect** none
 
@@ -146,9 +146,9 @@ Subtleties: An employee might forget to end or start a session on time, so there
 ## Conference Room Booking
 **concept** RoomBooking\[Rooms, User]
 
-**purpose** reduce scheduling conflicts of people who need conference rooms
+**purpose** reduce scheduling conflicts of people who need bookable rooms
 
-**principle** the company or university department specifies rooms that can be rented out, as well as what time that they are not open.  A person who wants to use a room reserves a time period to use the room, and then can be assured of having the room free at that time.
+**principle** the company specifies rooms that can be rented out, as well as what time that they are not open.  A person who wants to use a room reserves a time period to use the room, and then can be assured of having the room free at that time.
 
 **state** 
 
