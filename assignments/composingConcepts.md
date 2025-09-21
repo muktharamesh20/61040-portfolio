@@ -20,7 +20,7 @@ One benefit is that the shortened URLs are easier to remeber and to share verbal
 
 One disadvantage is that it could become very long. Using a common dictionary means that we are concatonating words, and words can be long. This reduces the advantage of "short" links.
 
-I would modify the NonceGeneration concept to simply change the effect to "returns a nonce that is not already used by this context, and is made up of dictionary words".
+I would modify the NonceGeneration concept to simply change the purpose to "generate unique memorable strings, made up of dictionary words, within a context" and the generate() effect to "returns a nonce that is not already used by this context, and is made up of dictionary words".
 
 ## Synchronization Questions
 
@@ -93,12 +93,17 @@ delete(resource: Resource)
 **state**
 - a set of username with  
 - a password String
+
 **actions**
 authenticate(username: String, password:String): (authenticated: Boolean)
+
 **requires** the username and password pair exist
+
 **effect** returns true if the pair exists, and false otherwise
 register(username: String, password:String)
+
 **requires** the username does not already exist
+
 **effect** the username and password pair are registered
 
 
@@ -148,8 +153,8 @@ AnalyticsCounter.getAnalytics(resource: ShortUrl)
 - **Allowing users to choose their own short URLs;**
   - Just don't use NonceGeneration in the register sync, and use UrlShortening.register() with user input for the shortUrlSuffix argument.
 - **Using the “word as nonce” strategy to generate more memorable short URLs;**
-  - We could use a WordAsNonceGeneration concept which acts exactly like NonceGeneration, but has an additional aspect of generate() where the effect says "returns a nonce that is not already used by this context, and is made up of multiple common dictionary words". The purpose would also change to include the fact that the strings are unique and made up of words.
-- I**ncluding the target URL in analytics, so that lookups of different short URLs can be grouped together when they refer to the same target URL;**
+  - We could use a WordAsNonceGeneration concept which acts exactly like NonceGeneration, but has an additional aspect of generate() where the effect says "returns a nonce that is not already used by this context, and is made up of common dictionary words". The purpose would also change to include the fact that the strings are unique and made up of words.
+- *I*ncluding the target URL in analytics, so that lookups of different short URLs can be grouped together when they refer to the same target URL;**
 
   - We could extend Analytics to include a targetUrl attribute linked to the resource. However, this doesn't seem very useful as there isn't much use in mulitple shortUrls being linked to the same target url. It will make things more confusing on the user side too since people might think two urls link to two different websites.
 
