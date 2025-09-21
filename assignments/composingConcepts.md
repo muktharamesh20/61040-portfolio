@@ -117,10 +117,12 @@ Request.shortenUrl in the "register" sync no longer would need shortUrlBase, and
 
 **when**
 Request.shortenUrl (targetUrl, shortUrlBase)
+
 NonceGeneration.generate (): (nonce)
 
 **then**
 UrlShortening.register (shortUrlSuffix: nonce, shortUrlBase, targetUrl): (shortUrl)
+
 AnalyticsCounter.register (resource: shortURL)
 
 -----
@@ -132,6 +134,7 @@ Request.translateShortenedUrl (shortUrl)
 
 **then**
 UrlShortening.lookup (shortUrl): (targetUrl)
+
 AnalyticsCounter.accessResource(resource: shortUrl)
 
 -----
@@ -140,6 +143,7 @@ AnalyticsCounter.accessResource(resource: shortUrl)
 
 **when**
 Request.checkAnalytics (shortUrl)
+
 Authenticate.authenticate(username, password)
 
 **then**
