@@ -159,7 +159,7 @@ AnalyticsCounter.getAnalytics(resource: ShortUrl)
   - Just don't use NonceGeneration in the register sync, and use UrlShortening.register() with user input for the shortUrlSuffix argument.
 - **Using the “word as nonce” strategy to generate more memorable short URLs;**
   - We could use a WordAsNonceGeneration concept which acts exactly like NonceGeneration, but has an additional aspect of generate() where the effect says "returns a nonce that is not already used by this context, and is made up of common dictionary words". The purpose would also change to include the fact that the strings are unique and made up of words.
-- *I*ncluding the target URL in analytics, so that lookups of different short URLs can be grouped together when they refer to the same target URL;**
+- **Including the target URL in analytics, so that lookups of different short URLs can be grouped together when they refer to the same target URL;**
 
   - We could extend Analytics to include a targetUrl attribute linked to the resource. However, this doesn't seem very useful as there isn't much use in mulitple shortUrls being linked to the same target url. It will make things more confusing on the user side too since people might think two urls link to two different websites.
 
