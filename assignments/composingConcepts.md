@@ -64,7 +64,8 @@ Request.shortenUrl in the "register" sync no longer would need shortUrlBase, and
 - a set of Resources with
 - a count Number
 - an owner User
-**actiions**
+
+**actions**
 
 accessResource(resource: Resource)
 - **requires** the resource exists
