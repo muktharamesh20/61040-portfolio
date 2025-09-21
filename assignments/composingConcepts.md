@@ -62,26 +62,26 @@ Request.shortenUrl in the "register" sync no longer would need shortUrlBase, and
 
 **state**
 - a set of Resources with
-- a count Number
-- an owner User
+    - a count Number
+    - an owner User
 
 **actions**
 
-accessResource(resource: Resource)
-- **requires** the resource exists
-- **effect** the analytics will record that the resource was accessed one more time
+- accessResource(resource: Resource)
+    - **requires** the resource exists
+    - **effect** the analytics will record that the resource was accessed one more time
 
-getAnalytics(resource: Resource): (numAcesses: Number)
-- **requires** the resources exists for the resource
-- **effect** returns the number of times the resource was accessed
+- getAnalytics(resource: Resource): (numAcesses: Number)
+    - **requires** the resources exists for the resource
+    - **effect** returns the number of times the resource was accessed
 
-register(resource: Resource)
-- **requires** the resources exists
-- **effect** creates the resource
+- register(resource: Resource)
+    - **requires** the resources exists
+    - **effect** creates the resource
 
-delete(resource: Resource)
-- **requires** the resources exists
-- **effect** deletes the resource
+- delete(resource: Resource)
+    - **requires** the resources exists
+    - **effect** deletes the resource
 
 -----
 
@@ -93,19 +93,19 @@ delete(resource: Resource)
 
 **state**
 - a set of username with  
-- a password String
+    - a password String
 
 **actions**
-authenticate(username: String, password:String): (authenticated: Boolean)
+- authenticate(username: String, password:String): (authenticated: Boolean)
 
-**requires** the username and password pair exist
+    - **requires** the username and password pair exist
 
-**effect** returns true if the pair exists, and false otherwise
-register(username: String, password:String)
+    - **effect** returns true if the pair exists, and false otherwise
+- register(username: String, password:String)
 
-**requires** the username does not already exist
+    - **requires** the username does not already exist
 
-**effect** the username and password pair are registered
+    - **effect** the username and password pair are registered
 
 
 -----
