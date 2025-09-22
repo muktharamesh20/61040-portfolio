@@ -8,7 +8,7 @@ The reason for contexts is to allow more flexibility for the users. If both Inst
 
 ### Why must the NonceGeneration store sets of used strings? One simple way to implement the NonceGeneration is to maintain a counter for each context and increment it every time the generate action is called. In this case, how is the set of used strings in the specification related to the counter in the implementation? (In abstract data type lingo, this is asking you to describe an abstraction function.)
 
-It must set a set of used strings to maintain an invarient that the generated string is unique. If NonceGeneration did not know what strings were previously used, it could not guarantee that a newly generated string truly was unique.
+It must store a set of used strings to maintain the invarient that the generated string is unique. If NonceGeneration did not know what strings were previously used, it could not guarantee that a newly generated string truly was unique.
 
 Because specifications and abstract data types don't care about the implementation, and we want to keep the concept as generalized as possible, we actually wouldn't mention that it maintains a counter for each context.
 
@@ -40,7 +40,7 @@ It requires no user input, and we want it happen every time a new shortened URL 
 
 ### Suppose the application did not support alternative domain names, and always used a fixed one such as “bit.ly.” How would you change the synchronizations to implement this?
 
-Request.shortenUrl in the "register" sync no longer would need shortUrlBase, and neither would the "generate" sync. Then, we would put the fixed domain name (ie "bit.ly") in place of shortUrlBase as a string in UrlShortening.register().
+Request.shortenUrl in the "register" sync no longer would need the argument shortUrlBase, and neither would the "generate" sync. Then, we would put the fixed domain name (ie "bit.ly") in place of shortUrlBase as a string in UrlShortening.register().
 
 ### These synchronizations are not complete; in particular, they don’t do anything when a resource expires. Write a sync for this case, using appropriate actions from the ExpiringResource and URLShortening concepts.
 
