@@ -54,9 +54,10 @@ This application helps students actively learn, remember, and understand lecture
     - date_created Date
     - set of collaboraters User
     - a `share_code` String
+    - lecture_ended Flag
 - **Actions**
     - createNote(t?: String, u: User): (n: Note)
-        - **effect:** Creates a new note.  If t is specified, the title is t.  Otherwise, the title is "Untitled".  date_created is the time that createNote() was called.  The set of collaboratoers is a set with only u.  A random unique `share_code` is generated.
+        - **effect:** Creates a new note.  If t is specified, the title is t.  Otherwise, the title is "Untitled".  date_created is the time that createNote() was called.  The set of collaboratoers is a set with only u.  A random unique `share_code` is generated. lecture_ended is False.
     - deleteNote(note: Note)
         - **requires** note exists
         - **effect** deletes the notes
@@ -65,6 +66,10 @@ This application helps students actively learn, remember, and understand lecture
         - **effect** adds u as a collaborater with full access to the note
     - setTitle(t: String, n: Note)
         - **effect** Renames the title of note n with as t 
+    - endLecture(n: Note)
+        - **requires** lecture_ended is False
+        - **effect** lecture_ended is True
+
 
 **UserNaming**  
 - **Purpose:** Name users  
@@ -117,11 +122,12 @@ This application helps students actively learn, remember, and understand lecture
 **Summaries[Item]**
 - **Purpose** Highlights the most important part of Item
 - **Principle** Item is filled with details.  In order to highlight the most important parts of Item, we summarize it so it's easy to quickly look through.
-- **State:** Set of `item` with 
+- **State:** Set of `Item` with 
     - summary String  
 - **Actions:**
-    - `setSummary(t: String, i: Item): (s: Summary)`
-        - **effect** if i already exists, change the summary associated with i to t.  If i does not exist in Summaries, create a new summary for i with t.
+    - `setSummary(texts: String[], items: Item[]): (s: Summary[])`
+        - **requires** the ith item in texts corresponds to the ith item in items
+        - **effect** for every (`text`, `item`) in (texts, items), if `item` already exists, change the summary associated with `item` to a summary of `text`.  If `item` does not exist in Summaries, create a new summary for `item` with a summary of `text`.
 
 
 **Folder[Item]**  
@@ -139,15 +145,37 @@ This application helps students actively learn, remember, and understand lecture
     - `insertItem(i: Item, f: Folder)`
         - **effect** if i is already in a folder, remove it from that folder and insert it into f.  Otherwise, simply insert it into f
 
+
 ## Synchronization Notes
 **sync** CreateAccount
+
 **when**
 - Request.createAccount (name, password)
 **then**
 - UserNaming.register (name)
 - PasswordAuth.setPassword (user, password)
 
+**sync** CreateNote
 
+**when**
+- Request.createNote(creator:User, title?: String)
+**then**
+- CollaborativeNotes.createNote(t: Title, u: creator): (Note)
+
+**sync** CreateFirstSection (system action)
+
+**when**
+- CollaborativeNotes.createNote(t: Title, u: creator): (Note)
+**then**
+- Sections.createSection(n: Note, p: 0): (Section)
+
+**sync** EndLectureNotesSession
+
+**when**
+- Request.endLectureNotesSession(note: Note, sections: Section[], sectionContent: String[])
+**then**
+- CollaborativeNotes.endLecture(n)
+- Summaries.setSummary(texts: sectionContent, items:sections) 
 
 
 **Role in App:** 
