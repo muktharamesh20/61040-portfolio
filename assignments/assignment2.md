@@ -54,15 +54,15 @@ This application helps students actively learn, remember, and understand lecture
     - set of collaboraters User
     - a `share_code` String
 - **Actions**
-    - createNote(t?: String, u: User): (n: Note)
+    - `createNote(t?: String, u: User): (n: Note)`
         - **effect:** Creates a new note.  If t is specified, the title is t.  Otherwise, the title is "Untitled".  date_created is the time that createNote() was called.  The set of collaboratoers is a set with only u.  A random unique `share_code` is generated. 
-    - deleteNote(note: Note)
+    - `deleteNote(note: Note)`
         - **requires** note exists
         - **effect** deletes the notes
-    - becomeCollaborator(share_code: String, user: User): (note: Note)
+    - `becomeCollaborator(share_code: String, user: User): (note: Note)`
         - **requires** user is not already a collaborator of the note and that `share_code` matches some share_code of a note
         - **effect** adds user as a collaborater with full access to the note associated with the share_code
-    - setTitle(t: String, n: Note)
+    - `setTitle(t: String, n: Note)`
         - **effect** Renames the title of note n with as t 
 
 
