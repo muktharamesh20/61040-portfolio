@@ -13,8 +13,10 @@ Here are 3 fun facts about me:
 
 
 # Table of Contents
-[Link to Assignment 1](assignments/assignment1.md)
+[Link to Ideation Process](assignments/assignment1.md)
 
 [Link to Problem Set 1](assignments/writingConcepts.md)
 
 [Link to Problem Set 2](assignments/composingConcepts.md)
+
+[Link to Designing Individual Project (Assignment 2)](assignments/assignment2.md)
