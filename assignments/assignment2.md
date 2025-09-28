@@ -59,9 +59,9 @@ This application helps students actively learn, remember, and understand lecture
     - deleteNote(note: Note)
         - **requires** note exists
         - **effect** deletes the notes
-    - becomeCollaborator(p: String, u: User, n: Note)
-        - **requires** u is not already a collaborator of the note and that p matches the share_code of the note
-        - **effect** adds u as a collaborater with full access to the note
+    - becomeCollaborator(share_code: String, user: User): (note: Note)
+        - **requires** user is not already a collaborator of the note and that `share_code` matches some share_code of a note
+        - **effect** adds user as a collaborater with full access to the note associated with the share_code
     - setTitle(t: String, n: Note)
         - **effect** Renames the title of note n with as t 
 
@@ -92,9 +92,9 @@ This application helps students actively learn, remember, and understand lecture
     - `position` number
     - `text` String
 - **Actions:**
-    - `createSection(n: Note, p: Number, t: String): (s: Section)`
+    - `createSection(n: Note, p: Number): (s: Section)`
         - **requires** n is an existing Note
-        - **effect** creates a new section associated with the parent note n at the `p`th position (1 indexed), pushing everything after it down (increasing their positions by 1).  The text is t.
+        - **effect** creates a new section associated with the parent note n at the `p`th position (1 indexed), pushing everything after it down (increasing their positions by 1).  The text is ''.
     - `modifySection(s: Section, t: String)`
         - **requires** s is an existing Section
         - **effect** changes the text of the section to t.
@@ -138,43 +138,59 @@ This application helps students actively learn, remember, and understand lecture
         - a contained set of Folders
         - an elements set of `Item`
 - **Actions:** 
+    - `createRootFolder(): (f: Folder)`
+        - **requires** no other folder has been created
+        - **effect** creates a root folder to nest elements and folders inside of
     - `insertFolder(f1: Folder, f2: Folder)`
         - **requires** f2 is not hierarchcly a descendent of f1.  In other words, f2 cannot be inside of f1 through any path of folders.
         - **effect** if f1 is already in a folder, remove it from that folder and move it into f2.  If f1 is a new folder, just add it to f2.
+    - `deleteFolder(f: Folder)`
+        - **effect** deletes f and everything contained inside of f from the folder hierarchy 
     - `insertItem(i: Item, f: Folder)`
         - **effect** if i is already in a folder, remove it from that folder and insert it into f.  Otherwise, simply insert it into f
 
 
-## Synchronization Notes
+## Synchronization Examples
 **sync** CreateAccount
 
 **when**
-- Request.createAccount (name, password)
+- Request.createAccount(name, password)
+
 **then**
-- UserNaming.register (name)
+- UserNaming.register(name)
 - PasswordAuth.setPassword (user, password)
-
-**sync** CreateNote
-
-**when**
-- Request.createNote(creator:User, title?: String)
-**then**
-- CollaborativeNotes.createNote(t: Title, u: creator): (Note)
-
-**sync** CreateFirstSection (system action)
+- Folder.createRootFolder()
+---
+**sync** InitializeNote
 
 **when**
-- CollaborativeNotes.createNote(t: Title, u: creator): (Note)
+- Request.createNote(title?: String, creater: User, folder: Folder)
+- CollaborativeNotes.createNote(t: Title, u: creator): (note: Note)
+
 **then**
+- Folder.insertItem(i: note, f: folder)
 - Sections.createSection(n: Note, p: 0): (Section)
 
+---
 **sync** EditSection
 
 **when**
-- Request.editSection(section: Section, sectionContent: String[])
+- Request.editSection(section: Section, sectionContent: String)
+
 **then**
-- Section.
-- Summaries.setSummary(texts: sectionContent, items:sections) 
+- Section.modifySection(section: Section, t: sectionContent )
+- Summaries.setSummary(text: sectionContent, item:section) 
+---
+**sync** JoinNote
+
+**when**
+- Request.joinNote(user, share_code, requested_folder)
+
+**then**
+- CollaborativeNotes.joinNote(share_code, user): (note)
+- Folder.insertItem(note, requested_folder)
+
+---
 
 
 **Role in App:** 
