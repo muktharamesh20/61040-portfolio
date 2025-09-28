@@ -36,9 +36,9 @@ This application helps students actively learn, remember, and understand lecture
 **Key Features:**
 1. **Shared Handwritten Notetaking:** The main feature will be real-time collaborative handwritten notes, including diagrams and annotations. This saves time and improves comprehension because students can be present in the lecture.  Additionally, the student can bounce ideas off the person that they are taking notes with.  It's better than Google Docs, which is what we used to use in high school, because you can use it for technical classes (ie math equations) as well with the handwriting feature.  This will help improve students' comprehension of lecture materials, benefiting all stakeholers because the student gets better academic performance.
 2. **Automated Summarizing:** Notes are also automatically summarized and by topic, easing review and identifying confusing sections.  This will be done by an AI agent after lecture is over.  When the student comes back to review at a future date, it will be easy to find the places that they struggled and will get additional insight by the summaries provided by the AI agent.
-3. **Tagging Sections:** Students can mark specific sections of notes based on how they feel about it to make it easier to come back to (ie "high priority", "low priority", "confusing", "practice more", "ofice hours", "understand it", etc.)
-3. **Potential Future Feature - AI Tutor:** If you have trouble with one of the sections, you can ask the AI to help you understand the concept.  The AI will use your notes as context for the chat.
-4. **Potential Future Feature – Study Integration:** There can also be flashcards and custom review questions generated from lecture notes to optimize study sessions.  Students can also add their own questions and the AI can generate varients of that (such as questions from past exams).  These flashcard sets will remain private to the user so that copyright material is not distributed to a bunch of people (to address the concerns of stakeholders like the teacher an university).
+3. **Tagging Sections:** Students can mark specific sections of notes to come back to based on how they feel about it, making it less effort to remember and actually try re-learning confusing bits of lectures. (ie "high priority", "medium priority", "low priority", "confusing", "practice more", "ofice hours", "understood it", etc.)
+4. **Potential Future Feature - AI Tutor:** If you have trouble with one of the sections, you can ask the AI to help you understand the concept.  The AI will use your notes as context for the chat.
+5. **Potential Future Feature – Study Integration:** There can also be flashcards and custom review questions generated from lecture notes to optimize study sessions.  Students can also add their own questions and the AI can generate varients of that (such as questions from past exams).  These flashcard sets will remain private to the user so that copyright material is not distributed to a bunch of people (to address the concerns of stakeholders like the teacher an university).
 
 ---
 
@@ -48,22 +48,32 @@ This application helps students actively learn, remember, and understand lecture
 
 **CollaborativeNotes[User]**
 - **Purpose** Record information
-- **Principle**
+- **Principle** A student creates a note and then shares the "share code" with their friends.  The students can then take notes together.  After the lecture, the notes are still viewable and editable by all the collaborators.
 - **State** Set of Notes with
     - title String
     - date_created Date
     - set of collaboraters User
     - a `share_code` String
 - **Actions**
-    - createNote(date_created, title: String)
+    - createNote(t?: String, u: User): (n: Note)
+        - **effect:** Creates a new note.  If t is specified, the title is t.  Otherwise, the title is "Untitled".  date_created is the time that createNote() was called.  The set of collaboratoers is a set with only u.  A random unique `share_code` is generated.
     - deleteNote(note: Note)
+        - **requires** note exists
+        - **effect** deletes the notes
+    - becomeCollaborator(p: String, u: User, n: Note)
+        - **requires** u is not already a collaborator of the note and that p matches the share_code of the note
+        - **effect** adds u as a collaborater with full access to the note
+    - setTitle(t: String, n: Note)
+        - **effect** Renames the title of note n with as t 
 
 **UserNaming**  
 - **Purpose:** Name users  
 - **Principle:** After registering with a name, the user can be recognized by other users that they are collaborating with.
 - **State:** Set of Users with 
-    - a `username` string  
-    - a `name` string
+    - a `username` string 
+- **Actions** 
+    - `register(un: String): (u: User)`
+        - **effect** create the user with username `un`
 
 **PasswordAuth[User]**  
 - **Purpose:** Authenticate users  
@@ -71,42 +81,63 @@ This application helps students actively learn, remember, and understand lecture
 - **State:** Set of Users with 
     - `password` string  
 - **Actions:**
-    - setPassword(u: User, p: String)
-    - authenticate(u: User, p: String)
+    - `setPassword(u: User, p: String)`
+    - `authenticate(u: User, p: String)`
 
 **Sections[Notes]**  
 - **Purpose** Split the notes into seperate topics
-- **Principle:** 
+- **Principle:** while you're creating notes, you can create sections and will organize the notes themselves into different topics.  You can come back to the notes and seperate your studying into the different sections
 - **State:** set of Section with 
     - `note` Note
     - `position` number
 - **Actions:**
-    - createSection(n: Note, p: Number): (s: Section)
+    - `createSection(n: Note, p: Number): (s: Section)`
         - **requires** n is an existing Note
         - **effect** creates a new section associated with the note n at the `p`th position (1 indexed), pushing everything after it down (increasing their positions by 1)
-    - deleteSection(s: Section)
+    - `deleteSection(s: Section)`
         - **requires** s is an existing Section
         - **effect** deletes the section and moves everything after it up by one position (reducing their positions by 1)
 
 
 **Tags[Item]** 
-- **Purpose** 
-- **Principle:** Labels item to organize it in some way.
-- **State:** Set of tags with 
-    - `label` string
-    - set of `item` 
+- **Purpose** Flags items
+- **Principle:** Labels item to flag it in some way.  Later, you can grab just the items with a certain tag, so it makes it easier to access.
+- **State:** 
+    - Set of tags with 
+        - `label` string
+        - set of `item` 
+- **Actions:**
+    - `addTag(label: String, item: Item): (t: Tag)`
+        - **requires** there does not already exist a tag associated with that label and item
+        - **effect** creates a tag with that label and item
+    - `removeTag(t: Tag)`
+        - **requires** t is in the set of tags
+        - **effect** removes the tag
 
 **Summaries[Item]**
-- **State:** Set of summaries with 
-    - `text` string 
-    - set of `item` 
+- **Purpose** Highlights the most important part of Item
+- **Principle** Item is filled with details.  In order to highlight the most important parts of Item, we summarize it so it's easy to quickly look through.
+- **State:** Set of `item` with 
+    - summary String  
+- **Actions:**
+    - `setSummary(t: String, i: Item): (s: Summary)`
+        - **effect** if i already exists, change the summary associated with i to t.  If i does not exist in Summaries, create a new summary for i with t.
 
 
 **Folder[Item]**  
 - **Purpose:** Organize items hierarchically  
-- **Principle:** Items remain with the folder even if moved  
-- **State:** Set of Folders with `name`, contained Folders, and `elements` (Items)  
-- **Actions:** `insert(i: Item, f: Folder)`  
+- **Principle:** After you create a folder and insert elements into it, you can move the folder into another folder and all the elements still belong to it.  You can insert folders or items inside a folder.
+- **State:** 
+    - Set of Folders with 
+        - name String
+        - a contained set of Folders
+        - an elements set of `Item`
+- **Actions:** 
+    - `insertFolder(f1: Folder, f2: Folder)`
+        - **requires** f2 is not hierarchcly a descendent of f1.  In other words, f2 cannot be inside of f1 through any path of folders.
+        - **effect** if f1 is already in a folder, remove it from that folder and move it into f2.  If f1 is a new folder, just add it to f2.
+    - `insertItem(i: Item, f: Folder)`
+        - **effect** if i is already in a folder, remove it from that folder and insert it into f.  Otherwise, simply insert it into f
 
 ## Synchronization Notes
 **sync** CreateAccount
@@ -125,7 +156,7 @@ First, there is the Notes concept.  One note is a file, meant to be used for a s
 
 ## UI Sketches
 ![Scriblink UI Sketches](../assets/UISketch.PNG)
-(Final AI chat screen is a stretch goal if I can finish the first two.)
+(Final AI chat screen is a stretch goal if I can finish the first three features, as described above.)
 
 ## User journey
 During calculus class, a student isn't engaged because they are more focused on taking notes than being present in the class and actually digesting what they are hearing.  The student has to rewatch lecture videos consistantly, and falls further and further behind.  They need a better way to actually absorb the material and save time.  They open up the note taking app.  They create a new note, and invite a friend to join the session.  Now in lecture, they work together to create notes.  They have more time to actually listen to what the lecturer is saying, can bounce their ideas off each other.  The split up their notes into seperate sections to make it more managemable.
