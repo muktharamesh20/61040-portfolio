@@ -5,7 +5,7 @@
 I want to maximize my learning and performance. I want focus on not just getting good grades but also truly understanding the material.  Currently, I struggle with keeping up with lecture and really understanding what I'm doing.  I notice a difference from high school where I felt like I had time (or it was just easier) to really internalize information I was given in class, but now it's a lot harder to do that.  
 
 ## Problem: Taking Notes in Fast Lectures
-Students often miss key points when lectures move quickly. This leads to incomplete notes, extra review time, stress, and lower academic performance. Sometimes you're so absorbed in writing down everything you hear, you don't really have time to digest what's being said in lecture.  This is a huge problem, and me and my friends have experienced it firsthand. In fact, because of how hard it is to both record information and actually learn and be present in some classes, many students don't even go to lecture because it's not worth their time, which just leading to even more stress and review time.
+Students often miss key points when lectures move quickly. This leads to incomplete notes, extra review time, stress, and lower academic performance. Sometimes you're so absorbed in writing down everything you hear, you don't really have time to digest what's being said in lecture.  This is a huge problem, and me and my friends have experienced it firsthand. In fact, because of how hard it is to both record information and actually learn and be present in some classes, many students don't even go to lecture because it doesn't feel like it's worth their time, which just leading to even more stress and review time.
 
 ## Stakeholders
 - **Student (direct user):** Poorer notes lead to more stress, more time to review for tests, and less comprehension and retention. This could also lead to lower test scores, and some students even skipping lecture because they don't think it's useful. 
@@ -33,9 +33,9 @@ Students often miss key points when lectures move quickly. This leads to incompl
 This application helps students actively learn, remember, and understand lecture material.  
 
 **Key Features:**
-1. **Shared Handwritten Notetaking:** The main feature will be real-time collaborative handwritten notes, including diagrams and annotations. This saves time and improves comprehension because students can be present in the lecture.  Additionally, the student can bounce ideas off the person that they are taking notes with.  It's better than Google Docs, which is what we used to use in high school, because you can use it for technical classes (ie math equations) with the handwriting feature.  This will help improve students' comprehension of lecture materials, benefiting all stakeholers because the student gets better academic performance.
-2. **Automated Summarizing:** Notes are also automatically summarized and by topic, easing review and identifying confusing sections.  This will be done by an AI agent after lecture is over.  When the student comes back to review at a future date, it will be easy to find the places that they struggled and will get additional insight by the summaries provided by the AI agent.
-3. **Tagging Sections:** Students can mark specific sections of notes to come back to based on how they feel about it, making it less of an effort to remember and actually try re-learning confusing bits of lectures. (ie you can mark sections as "high priority", "medium priority", "low priority", "confusing", "practice more", "ofice hours", "understood it", etc.)
+1. **Shared Handwritten Notetaking:** The main feature will be real-time collaborative handwritten notes, including diagrams and annotations. This saves time and also improves comprehension because students can be present in the lecture.  Additionally, the student can bounce ideas off the person that they are taking notes with.  It's better than Google Docs, which is what some of my friens used to use in high school, because you can use it for technical classes (ie math equations) with the handwriting feature.  This will help improve students' comprehension of lecture materials, benefiting all stakeholers because the student gets better academic performance.
+2. **Automated Summarizing:** Notes are also automatically summarized and by topic, easing review.  This will be done by an AI agent as the student edits their notes.  When the student comes back to review at a future date, it will be easy to find the places that they struggled and will get additional insight by the summaries provided by the AI agent.
+3. **Tagging Sections:** Students can mark specific sections of notes to come back to based on how they feel about it, making it less of an effort to remember and actually try re-learning confusing bits of lectures. (ie you can mark sections as "high priority", "medium priority", "low priority", "confusing", "practice more", "ofice hours", "understood it", etc.).  The home screen will make it easier to pick out the higher priority ones.
 4. **Potential Future Feature - AI Tutor:** If you have trouble with one of the sections, you can ask the AI to help you understand the concept.  The AI will use your notes as context for the chat.
 5. **Potential Future Feature – Study Integration:** There can also be flashcards and custom review questions generated from lecture notes to optimize study sessions.  Students can also add their own questions and the AI can generate varients of that (such as questions from past exams).  These flashcard sets will remain private to the user so that copyright material is not distributed to a bunch of people (to address the concerns of stakeholders like the teacher an university).
 
@@ -65,24 +65,19 @@ This application helps students actively learn, remember, and understand lecture
     - `setTitle(t: String, n: Note)`
         - **effect** Renames the title of note n with as t 
 
-
-**UserNaming**  
-- **Purpose:** Name users  
-- **Principle:** After registering with a name, the user can be recognized by other users that they are collaborating with.
-- **State:** Set of Users with 
-    - a `username` string 
-- **Actions** 
-    - `register(un: String): (u: User)`
-        - **effect** create the user with username `un`
-
-**PasswordAuth[User]**  
+**PasswordAuth**  
 - **Purpose:** Authenticate users  
 - **Principle:** After setting a password for a user, the user can authenticate with that password
 - **State:** Set of Users with 
+    - `username` string
     - `password` string  
 - **Actions:**
-    - `setPassword(u: User, p: String)`
-    - `authenticate(u: User, p: String)`
+    - `register(username: String, password: String)`
+        - **requires:** the username does not exist
+        - **effect** create a new user with this username and password  
+    - `authenticate(user: username, password: String): (user: User)`
+        - **requires:** the username and password combination exists in the set of users
+        - **effect** returns the user
 
 **Sections[Notes]**  
 - **Purpose** Split the notes into seperate topics
@@ -105,7 +100,7 @@ This application helps students actively learn, remember, and understand lecture
 
 **Tags[Item]** 
 - **Purpose** Flags items
-- **Principle:** Labels item to flag it in some way.  Later, you can grab just the items with a certain tag, so it makes it easier to access.
+- **Principle:** a user labels item to flag it.  Later, the user can grab just the items with a certain tag, so it makes it easier to access.
 - **State:** 
     - Set of tags with 
         - `label` string
@@ -120,7 +115,7 @@ This application helps students actively learn, remember, and understand lecture
 
 **Summaries[Item]**
 - **Purpose** Highlights the most important part of Item
-- **Principle** Item is filled with details.  In order to highlight the most important parts of Item, we summarize it so it's easy to quickly look through.
+- **Principle** The user has an item and wants it summarized.  A summary is created for that item, and the user can now view the summary for that item.
 - **State:** Set of `Item` with 
     - summary String  
 - **Actions:**
@@ -154,11 +149,10 @@ This application helps students actively learn, remember, and understand lecture
 **sync** CreateAccount
 
 **when**
-- Request.createAccount(name, password)
+- Request.createAccount(username, password)
 
 **then**
-- UserNaming.register(name)
-- PasswordAuth.setPassword (user, password)
+- PasswordAuth.register(username, password)
 - Folder.createRootFolder()
 ---
 **sync** InitializeNote
@@ -204,7 +198,7 @@ First, there is the Notes concept.  One note is meant to be used for a single le
 ## User journey
 During calculus class, a student isn't engaged because they are more focused on taking notes than being present in the class and actually digesting what they are hearing.  The student has to rewatch lecture videos consistantly, and falls further and further behind.  They need a better way to actually absorb the material and save time.  They open up the Scriblink.  They create a new note in a "Calculus" folder, and invite a friend to join the session.  Now in lecture, they work together to create notes.  Now, they have more time to actually listen to what the lecturer is saying because they don't have to write as much, and can bounce their ideas off each other.  The split up their notes into seperate sections to make it more managable.
 
-When the lecture is over, the AI automatically tags the notes an summarizes the sections.  When it's midterm season, the students come back to the notes to find their notes.  The student is having trouble remembering what the u-subsitution is.  The AI has a summary and additional insights about u-substitution that the student didn't note down.
+When the lecture is over, the AI automatically summarizes the sections.  The student also adds the "medium priority" tag, to remind themselves to come back to it later this week just to solidfy the concepts.  In the future, when it's midterm season, the students come back to the notes to find their notes.  The student is having trouble remembering what the u-subsitution is.  The AI has a summary and additional insights about u-substitution.
 
 
 Potential Features (Stretch goal):
