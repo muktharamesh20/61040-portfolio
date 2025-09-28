@@ -61,7 +61,7 @@ This application helps students actively learn, remember, and understand lecture
         - **effect** deletes the notes
     - `becomeCollaborator(share_code: String, user: User): (note: Note)`
         - **requires** user is not already a collaborator of the note and that `share_code` matches some share_code of a note
-        - **effect** adds user as a collaborater with full access to the note associated with the share_code
+        - **effect** adds user as a collaborater to the note associated with the share_code, and gives them the note
     - `setTitle(t: String, n: Note)`
         - **effect** Renames the title of note n with as t 
 
@@ -72,9 +72,9 @@ This application helps students actively learn, remember, and understand lecture
     - `username` string
     - `password` string  
 - **Actions:**
-    - `register(username: String, password: String)`
+    - `register(username: String, password: String): (user: User)`
         - **requires:** the username does not exist
-        - **effect** create a new user with this username and password  
+        - **effect** create a new user with this username and password and returns the user  
     - `authenticate(user: username, password: String): (user: User)`
         - **requires:** the username and password combination exists in the set of users
         - **effect** returns the user
@@ -120,7 +120,6 @@ This application helps students actively learn, remember, and understand lecture
     - summary String  
 - **Actions:**
     - `setSummary(text: String, item: Item): (s: Summary)`
-        - **requires** the ith item in texts corresponds to the ith item in items
         - **effect** if `item` already exists, change the summary associated with `item` to a summary of `text`.  If `item` does not exist in Summaries, create a new summary for `item` with a summary of `text`.
 
 
@@ -172,7 +171,7 @@ This application helps students actively learn, remember, and understand lecture
 - Request.editSection(section: Section, sectionContent: String)
 
 **then**
-- Section.modifySection(section: Section, t: sectionContent )
+- Section.modifySection(section: Section, t: sectionContent)
 - Summaries.setSummary(text: sectionContent, item:section) 
 ---
 **sync** JoinNote
@@ -188,7 +187,7 @@ This application helps students actively learn, remember, and understand lecture
 
 
 **Role in App:** 
-First, there is the Notes concept.  One note is meant to be used for a single lecture.  Each note is associated with a couple of users that contributed to taking notes in the class, as well as a code to share to people to join the notes.  Sections are divisions within a single note.  This is to help with a few things, but the main part is to organize the notes into topics.  In a sync, we'll also attach summaries (from the Summaries concept) to the seperate sections every time we're done editing a section.  Additionally, these sections also help the UI.  In order to make sure that people aren't writing on top of each other, you can create new sections that can be written on seperately.  For instance, if I'm writing about "the chain rule" from a calculus lecture, and the professor suddenly moves to "integrals", my friend could start on the integrals by making a new section.  Because I have a different section, the app will allow me to continue expanding downwards on the "chain rule" section without colliding with my friend handwritten notes. Once I write down my last notes, I can join my friend's section and annotate and write with them.  Folders are to help organize notes, perhaps into classes or whatever the user desires.  The User concept keeps tracks of users, and the Authenticate concept authenticates users. Only certain users can access certain notes, so the authentication concept is important. Finally, tags help with searching and quickly understanding which notes you want to come back to.  You can mark sections as high, low, and medium priority, as well as potentially others.  
+First, there is the Notes concept.  One note is meant to be used for a single lecture.  Each note is associated with a couple of users that contributed to taking notes in the class, as well as a code to share to people to join the notes.  Sections are divisions within a single note.  This is to help with a few things, but the main part is to organize the notes into topics.  In a sync, we'll also attach summaries (from the Summaries concept) to the seperate sections every time we're done editing a section, which the user can use to help study when they come back to the notes.  Additionally, these sections also help the UI.  In order to make sure that people aren't writing on top of each other, you can create new sections that can be written on seperately.  For instance, if I'm writing about "the chain rule" from a calculus lecture, and the professor suddenly moves to "integrals", my friend could start on the integrals by making a new section.  Because I have a different section, the app will allow me to continue expanding downwards on the "chain rule" section without colliding with my friend handwritten notes. Once I write down my last notes, I can join my friend's section and annotate and write with them.  Folders are to help organize notes, perhaps into classes or whatever the user desires.  The User concept keeps tracks of users, and the Authenticate concept authenticates users. Only certain users can access certain notes, so the authentication concept is important. Finally, tags help with searching and quickly understanding which notes you want to come back to.  You can mark sections as high, low, and medium priority, as well as potentially others.  
 
 
 ## UI Sketches
@@ -198,7 +197,7 @@ First, there is the Notes concept.  One note is meant to be used for a single le
 ## User journey
 During calculus class, a student isn't engaged because they are more focused on taking notes than being present in the class and actually digesting what they are hearing.  The student has to rewatch lecture videos consistantly, and falls further and further behind.  They need a better way to actually absorb the material and save time.  They open up the Scriblink.  They create a new note in a "Calculus" folder, and invite a friend to join the session.  Now in lecture, they work together to create notes.  Now, they have more time to actually listen to what the lecturer is saying because they don't have to write as much, and can bounce their ideas off each other.  The split up their notes into seperate sections to make it more managable.
 
-When the lecture is over, the AI automatically summarizes the sections.  The student also adds the "medium priority" tag, to remind themselves to come back to it later this week just to solidfy the concepts.  In the future, when it's midterm season, the students come back to the notes to find their notes.  The student is having trouble remembering what the u-subsitution is.  The AI has a summary and additional insights about u-substitution.
+When the lecture is over, the AI automatically summarizes the sections.  The student also adds the "medium priority" tag, to remind themselves to come back to it later this week just to solidfy the concepts.  In the future, when it's midterm season, the students come back to the notes to find their notes.  The student is having trouble remembering what the u-subsitution is.  The AI has a summary and additional insights about u-substitution attached to that section.
 
 
 Potential Features (Stretch goal):
