@@ -35,7 +35,8 @@ This application helps students actively learn, remember, and understand lecture
 
 **Key Features:**
 1. **Shared Handwritten Notetaking:** The main feature will be real-time collaborative handwritten notes, including diagrams and annotations. This saves time and improves comprehension because students can be present in the lecture.  Additionally, the student can bounce ideas off the person that they are taking notes with.  It's better than Google Docs, which is what we used to use in high school, because you can use it for technical classes (ie math equations) as well with the handwriting feature.  This will help improve students' comprehension of lecture materials, benefiting all stakeholers because the student gets better academic performance.
-2. **Automated Tagging & Summarizing:** Notes are also automatically summarized and tagged by topic, easing review and identifying confusing sections.  This will be done by an AI agent after lecture is over.  When the student comes back to review at a future date, it will be easy to find the places that they struggled and will get additional insight by the summaries provided by the AI agent.
+2. **Automated Summarizing:** Notes are also automatically summarized and by topic, easing review and identifying confusing sections.  This will be done by an AI agent after lecture is over.  When the student comes back to review at a future date, it will be easy to find the places that they struggled and will get additional insight by the summaries provided by the AI agent.
+3. **Tagging Sections:** Students can mark specific sections of notes based on how they feel about it to make it easier to come back to (ie "high priority", "low priority", "confusing", "practice more", "ofice hours", "understand it", etc.)
 3. **Potential Future Feature - AI Tutor:** If you have trouble with one of the sections, you can ask the AI to help you understand the concept.  The AI will use your notes as context for the chat.
 4. **Potential Future Feature – Study Integration:** There can also be flashcards and custom review questions generated from lecture notes to optimize study sessions.  Students can also add their own questions and the AI can generate varients of that (such as questions from past exams).  These flashcard sets will remain private to the user so that copyright material is not distributed to a bunch of people (to address the concerns of stakeholders like the teacher an university).
 
@@ -47,11 +48,15 @@ This application helps students actively learn, remember, and understand lecture
 
 **CollaborativeNotes[User]**
 - **Purpose** Record information
-
+- **Principle**
 - **State** Set of Notes with
+    - title String
     - date_created Date
     - set of collaboraters User
     - a `share_code` String
+- **Actions**
+    - createNote(date_created, title: String)
+    - deleteNote(note: Note)
 
 **UserNaming**  
 - **Purpose:** Name users  
@@ -75,17 +80,26 @@ This application helps students actively learn, remember, and understand lecture
 - **State:** set of Section with 
     - `note` Note
     - `position` number
+- **Actions:**
+    - createSection(n: Note, p: Number): (s: Section)
+        - **requires** n is an existing Note
+        - **effect** creates a new section associated with the note n at the `p`th position (1 indexed), pushing everything after it down (increasing their positions by 1)
+    - deleteSection(s: Section)
+        - **requires** s is an existing Section
+        - **effect** deletes the section and moves everything after it up by one position (reducing their positions by 1)
 
 
-**Tags[Section]** 
+**Tags[Item]** 
+- **Purpose** 
+- **Principle:** Labels item to organize it in some way.
 - **State:** Set of tags with 
     - `label` string
-    - set of `section` 
+    - set of `item` 
 
-**Summaries[Section]**
+**Summaries[Item]**
 - **State:** Set of summaries with 
     - `text` string 
-    - set of `section` 
+    - set of `item` 
 
 
 **Folder[Item]**  
