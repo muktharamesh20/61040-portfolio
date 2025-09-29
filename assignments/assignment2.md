@@ -46,7 +46,7 @@ This application helps students actively learn, remember, and understand lecture
 ## Concepts
 
 **CollaborativeNotes[User]**
-- **Purpose** Record information from a lecture
+- **Purpose** let multiple people collaborate on a note
 - **Principle** A student creates a note and then shares the "share code" with their friends.  The students can then take notes together.  After the lecture, the notes are still viewable and editable by all the collaborators.
 - **State** Set of Notes with
     - title String
@@ -66,8 +66,8 @@ This application helps students actively learn, remember, and understand lecture
         - **effect** Renames the title of note n with as t 
 
 **PasswordAuth**  
-- **Purpose:** Authenticate users  
-- **Principle:** After setting a password for a user, the user can authenticate with that password
+- **Purpose:** Limit access to known users  
+- **Principle:** After setting a username and password for a user, the user can authenticate with that username and password and be treated each time as the same user.
 - **State:** Set of Users with 
     - `username` string
     - `password` string  
@@ -80,8 +80,8 @@ This application helps students actively learn, remember, and understand lecture
         - **effect** returns the user
 
 **Sections[Notes]**  
-- **Purpose** Split the notes into seperate topics
-- **Principle:** while you're creating a note, you can create sections into different topics.  This helps organize your notes, and if you write in a section that's visually below your friend's current section, they won't overlap.
+- **Purpose** Organize a note into seperate topics to make it easier to navigate, and makes the *handwriting notes* experience a little better for the user by reducing the number of times people run out of space because there's notes underneath the part they want to add more notes to.
+- **Principle:** while you're creating a note, you can create sections into different topics.  This helps organize your notes and makes it easier to navigate to a single topic within a note.  Practically, this also allows for better *handwriting experience* because if two people work on different sections that are right on top of each other, the person working on the upper notes doesn't need to squeeze in extra notes, or shift all the notes below them down to add more.  Instead, if the upper section needs extra notes they're just expanding the section so it doesn't overlap the lower section.  (check UI Sketch section's annotation for "Editing Notes" page if this doesn't make sense).
 - **State:** set of Section with 
     - `parentNote` Note
     - `position` number
@@ -99,7 +99,7 @@ This application helps students actively learn, remember, and understand lecture
 
 
 **Tags[Item]** 
-- **Purpose** Flags items
+- **Purpose** Flags items for later 
 - **Principle:** a user labels item to flag it.  Later, the user can grab just the items with a certain tag, so it makes it easier to access.
 - **State:** 
     - Set of tags with 
@@ -157,8 +157,8 @@ This application helps students actively learn, remember, and understand lecture
 **sync** InitializeNote
 
 **when**
-- Request.createNote(title?: String, creater: User, folder: Folder)
-- CollaborativeNotes.createNote(t: Title, u: creator): (note: Note)
+- Request.createNote(title, creater, folder)
+- CollaborativeNotes.createNote(t: title, u: creator): (note)
 
 **then**
 - Folder.insertItem(i: note, f: folder)
@@ -168,10 +168,10 @@ This application helps students actively learn, remember, and understand lecture
 **sync** EditSection
 
 **when**
-- Request.editSection(section: Section, sectionContent: String)
+- Request.editSection(section, sectionContent)
 
 **then**
-- Section.modifySection(section: Section, t: sectionContent)
+- Section.modifySection(section, t: sectionContent)
 - Summaries.setSummary(text: sectionContent, item:section) 
 ---
 **sync** JoinNote
